@@ -1,0 +1,5 @@
+@import "mReset.css";
+img {
+  display: inline-block;
+  width: 100px;
+}

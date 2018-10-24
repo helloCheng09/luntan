@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <title>8条接龙</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/commentDetail.css">
+    <link rel="stylesheet" href="./js/layui/css/layui.mobile.css">
+    <script type="text/javascript" src="./js/layui/layui.all.js"></script>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/autoTextarae.js"></script>
+</head>
+
+<body>
+    <!-- 接龙回复详情 -->
+    <div class="wrap">
+        <div class="com-item">
+            <span class="left-avatar">
+                <div class="avatar-img">头像</div>
+            </span>
+            <span class="right-detail">
+                <div class="nick">学生家长1</div>
+                <div class="com-text">这是评论内容</div>
+            </span>
+            <div class="com-item-bottom">
+                <span class="com-time">9分钟前</span>
+                <div class="like-com">
+                    <em class="com-like">点赞</em><em class="like-num">88</em>
+                    <em class="com-like">评论</em>
+                </div>
+            </div>
+            <a href="/topicDetail.html" class="com-link">查看原接龙</a>
+        </div>
+        <ul class="zi-com-list">
+            <!-- 正常回复子评论 -->
+            <li class="zi-com-item">
+                <span class="left-avatar">
+                    <div class="avatar-img">头像</div>
+                </span>
+                <span class="right-detail">
+                    <span class="nick">学生家长55</span>
+                    <div class="com-text">这是评论内容</div>
+                </span>
+                <div class="com-item-bottom">
+                    <span class="com-time">9分钟前</span>
+                    <div class="like-com">
+                        <em class="com-like">点赞</em><em class="like-num">88</em>
+                        <em class="com-like">评论</em>
+                    </div>
+                </div>
+            </li>
+            <!-- 评论 子评论的评论 -->
+            <li class="zi-com-item">
+                <span class="left-avatar">
+                    <div class="avatar-img">头像4</div>
+                </span>
+                <span class="right-detail">
+                    <div class="nick">学生家长999</div>
+                    <div class="com-text">
+                        <em class="comment-tag">回复</em>
+                        <span class="nick">学生家长1:</span>
+                        <span class="det-main">这是评论内容</span>
+                    </div>
+                </span>
+                <div class="com-item-bottom">
+                    <span class="com-time">9分钟前</span>
+                    <div class="like-com">
+                        <em class="com-like">点赞</em><em class="like-num">88</em>
+                        <em class="com-like">评论</em>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- 回复评论内容 -->
+        <div class="hid-re-com" style="display:none;">
+            <div class="re-com-panel">
+                <div class="re-com">回复</div>
+                <div class="re-cancle">取消</div>
+            </div>
+        </div>
+        <!-- 回复接龙话题 -->
+        <footer class="com-topic">
+            <div class="com-this-topic" id="comThis">回复接龙</div>
+            <span class="like-btn">
+                <em class="like-btn-show">点赞</em>
+            </span>
+        </footer>
+        <!-- 提交回复表单 -->
+        <div class="hid-form" style="display:none">
+            <form action="">
+                <div class="text-box">
+                    <textarea name="comment" id="" placeholder="写评论"></textarea>
+                </div>
+                <div class="submit-btn">
+                    <!-- <span class="face-btn">
+                        <img src="./img/face.png" alt="">
+                    </span> -->
+                    <span class="fasong-btn">
+                        <input type="submit" id="submitBtn" value="发送回复">
+                    </span>
+                    <span class="cancle-btn">
+                        <input type="button" id="submitBtn" value="取消">
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

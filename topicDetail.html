@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <title>接龙话题</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/topicDetail.css">
+    <link rel="stylesheet" href="./js/layui/css/layui.mobile.css">
+    <script type="text/javascript" src="./js/layui/layui.all.js"></script>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/autoTextarae.js"></script>
+</head>
+
+<body>
+    <!-- 接龙话题详情 -->
+    <div class="wrap">
+        <div class="back-box">
+            <span class="right-item">
+                <div class="item-img">
+                    <img src="./img/home.png" alt="">
+                    <div class="home-text">接龙列表</div>
+                </div>
+            </span>
+        </div>
+        <div class="topic-det">
+            <div class="head-det">
+                <div class="avatar-img">
+                    <img src="https://wx3.sinaimg.cn/large/65e195cdgy1fwiib1cou5j20qo0xc7pw.jpg" alt="" class="avatar">
+                </div>
+                <div class="right-item">
+                    <div class="nick-name">校长昵称<em class="xz-icon"><img src="./img/xiaozhang.png" alt=""></em></div>
+                    <div class="ft-time">发起时间：2018-10-24</div>
+                </div>
+            </div>
+            <!-- 百度编辑后 正文内容 -->
+            <div class="topic-contain">
+                <p> 这是正文正文这是正文正文这是正文正文这是正文正文</p>
+                <img src="https://wx3.sinaimg.cn/large/65e195cdgy1fwix6velmhj218w0u0wz0.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="comment-list">
+            <div class="top-tags">
+                <span class="com-tag" id="comTag">评论：666</span>
+                <span class="like-tag" id="likeTag">赞：99</span>
+            </div>
+            <div class="com-main">
+                <!-- 评论列表 -->
+                <ul class="com-list">
+                    <li class="com-item"  data-id="1">
+                        <span class="left-avatar">
+                            <div class="avatar-img">头像</div>
+                        </span>
+                        <span class="right-detail">
+                            <div class="nick">学生家长1</div>
+                            <div class="com-text">这是评论内容</div>
+                            <!-- 子评论链接 -->
+                            <div class="zi-com">
+                                <a href="./commentDetail.html" class="zi-link">
+                                    <div class="zi-com-item">
+                                        <span class="zi-author">家长2：</span>
+                                        <span class="zi-com-text">评论的评论</span>
+                                    </div>
+                                    <div class="zi-com-item">
+                                        <span class="zi-author">家长2</span><em>回复</em><span class="zi-author">家长66：</span>
+                                        <span class="zi-com-text">评论的评论</span>
+                                    </div>
+                                    <div class="show-all-zi">共8条评论</div>
+                                </a>
+                            </div>
+                        </span>
+                        <div class="com-item-bottom">
+                            <span class="com-time">9分钟前</span>
+                            <div class="like-com">
+                                <em class="com-like">点赞</em><em class="like-num">88</em>
+                                <em class="com-like">评论</em>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 点赞列表 -->
+                <ul class="like-list" style="display:none;">
+                    <li class="like-item">
+                        <div class="avatar-img">
+                            <div class="avatar">点赞得头像</div>
+                        </div>
+                        <span class="nick-name">家长1</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 回复评论内容 -->
+            <div class="hid-re-com" style="display:none;">
+                <div class="re-com-panel">
+                    <div class="re-com">回复</div>
+                    <div class="re-cancle">取消</div>
+                </div>
+            </div>
+            <!-- 回复接龙话题 -->
+            <footer class="com-topic">
+                <div class="com-this-topic" id="comThis">回复接龙</div>
+                <span class="like-btn">
+                    <em class="like-btn-show">点赞</em>
+                </span>
+            </footer>
+            <!-- 提交回复表单 -->
+            <div class="hid-form" style="display:none">
+                <form action="">
+                    <div class="text-box">
+                        <textarea name="comment" id="" placeholder="写评论"></textarea>
+                    </div>
+                    <div class="submit-btn">
+                        <!-- <span class="face-btn">
+                            <img src="./img/face.png" alt="">
+                        </span> -->
+                        <span class="fasong-btn">
+                            <input type="submit" id="submitBtn" value="发送回复">
+                        </span>
+                        <span class="cancle-btn">
+                            <input type="button" id="submitBtn" value="取消">
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
