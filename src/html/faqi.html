@@ -10,11 +10,20 @@
     <link rel="stylesheet" href="./js/layui/css/layui.mobile.css">
     <script type="text/javascript" src="./js/layui/layui.all.js"></script>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/autoTextarae.js"></script>
 </head>
 
 <body>
     <!-- 校长 教师 发布话题 -->
     <div class="wrap">
+        <!-- <div class="top-head">
+            <h3 class="wj-title">faub</h3>
+            <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/yz/mobile2/teacher/wenjuan.html" class="back-index">
+                <img src="<?php echo PUBLICPATH; ?>yz/img/home.png" alt="首页">
+                <label>首页</label>
+            </a>
+        </div> -->
+
         <form method="post" action="" class="fabu-form">
             <!-- <div class="fabu-item">
             <span class="topic-mini-img">发接龙缩略图片:</span>
@@ -33,7 +42,7 @@
 
             <div class="fabu-item">
                 <div class="title-text">设置接龙主题(必填):</div>
-                <textarea required="required" name="title" id="" placeholder="不超过40字"></textarea>
+                <textarea required="required" name="title" id="titileText" placeholder="不超过40字"></textarea>
             </div>
 
             <!-- 百度编辑器 -->
@@ -82,17 +91,9 @@
             </div>
         </form>
     </div>
-    <script>
-        var $ = window.Zepto
-        var $scope = $(window.document)
 
-        $scope.on("click", "#fabuSubmit", function () {
-            layer.alert('发布失败，请完善接龙信息！', {
-                skin: 'layui-layer-blue',
-                closeBtn: 0
-            });
-        })
-    </script>
+    <!-- 主入口js -->
+    <script src="./js/index.js" type="text/javascript"></script>
 </body>
 
 </html>

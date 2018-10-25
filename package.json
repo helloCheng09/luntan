@@ -1,0 +1,19 @@
+{
+  "name": "jielong",
+  "version": "1.0.0",
+  "description": "gulp topic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helloCheng09/luntan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helloCheng09/luntan/issues"
+  },
+  "homepage": "https://github.com/helloCheng09/luntan#readme"
+}
