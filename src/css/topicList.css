@@ -1,5 +1,149 @@
 @import "mReset.css";
-img {
+#tListWra {
+  min-height: 100vh;
+  padding-bottom: 10px;
+  background-color: #f7f7f7;
+}
+#tListWra .t-head {
+  height: 120px;
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: flex;
+}
+#tListWra .h-left {
   display: inline-block;
+  margin: 10px;
+  vertical-align: middle;
+}
+#tListWra .h-left .img-head {
   width: 100px;
+  height: 100px;
+  vertical-align: middle;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+}
+#tListWra .h-right {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 28px;
+}
+#tListWra .h-right .h-r-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #fff;
+}
+#tListWra .h-right .h-r-des {
+  margin-top: 10px;
+}
+#tListWra .h-right .h-r-des .r-comment-sum {
+  display: inline-block;
+  font-size: 14px;
+  color: #f8f8f8;
+}
+#tListWra .h-right .h-r-des .r-comment-sum:nth-of-type(1) {
+  margin-right: 8px;
+}
+#tListWra .main-show {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#tListWra .main-show .topic-list {
+  margin-top: 10px;
+  font-size: 0;
+}
+#tListWra .main-show .topic-list .topic-item {
+  padding: 12px 8px 4px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+#tListWra .main-show .topic-list .detail-link {
+  color: #333;
+}
+#tListWra .main-show .topic-list .detail-link .topic-show-item {
+  margin-bottom: 4px;
+}
+#tListWra .main-show .topic-list .detail-link .topic-show-item .icon-show {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  line-height: 20px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #30c230;
+}
+#tListWra .main-show .topic-list .detail-link .topic-show-item .titile {
+  display: inline-block;
+  width: 92%;
+  font-size: 18px;
+  vertical-align: middle;
+}
+#tListWra .main-show .topic-list .detail-link .topic-des {
+  margin: 0 10px 4px 20px;
+  line-height: 1.1;
+  font-size: 16px;
+  color: #666;
+}
+#tListWra .main-show .topic-list .detail-link .topic-item-bot {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+  font-size: 14px;
+  color: #adadad;
+}
+#tListWra .main-show .topic-list .detail-link .topic-item-bot .pre-icon {
+  margin-right: 4px;
+  padding: 2px;
+  border-radius: 2px;
+  line-height: 1;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 12px;
+  color: #fdff85;
+  background-color: #57aeff;
+}
+#tListWra .main-show .topic-list .detail-link .com-like-num {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 20px;
+  font-size: 14px;
+  color: #adadad;
+}
+#tListWra .main-show .topic-list .detail-link .com-like {
+  margin-right: 10px;
+}
+#tListWra .main-show .topic-list .detail-link .com-img {
+  margin-right: 5px;
+  margin-bottom: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+}
+#tListWra .main-show .topic-list .detail-link .com-num {
+  margin-right: 10px;
+  margin-top: 7px;
+}
+#tListWra .main-show .topic-list .detail-link .like-text {
+  vertical-align: -6px;
+}
+#tListWra .main-show .topic-list .detail-link .like-img {
+  display: inline-block;
+  width: 23px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 0px;
+  background: url(../img/likes.png);
+  background-repeat: no-repeat;
+  background-size: 483px 28px;
+  background-position: left;
 }

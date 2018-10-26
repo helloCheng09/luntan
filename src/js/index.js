@@ -1,6 +1,6 @@
-var $ = window.Zepto
-var $scope = $(window.document)
-var root = window.topic
+let $ = window.Zepto
+let $scope = $(window.document)
+let root = window.topic
 
 $scope.on("click", "#fabuSubmit", function () {
     layer.alert('发布失败，请完善接龙信息！', {
@@ -8,6 +8,33 @@ $scope.on("click", "#fabuSubmit", function () {
         closeBtn: 0
     });
 })
+// 文本框自适应
+if (document.getElementsByTagName("textarea").length) {
+    let textaraeEle = document.getElementsByTagName("textarea")
+    root.autoTextarea(textaraeEle[0])
+}
 
-var textaraeEle = document.getElementsByTagName("textarea")
-root.autoTextarea(textaraeEle[0])
+if ($(".teacher-item").length) {
+    // 选择班级、学生
+    root.multiSelect($(".teacher-item"), "selected")
+    root.selectAllBtn($("#selAll"), "btn_selected")
+    root.singleSel($(".student-item"), "selected")
+}
+
+console.log(12314)
+
+function renderImg(src) {
+    let $scope = $(document).find(".t-head")
+    var img = new Image()
+    img.src = src
+    img.onload = function () {
+        root.blurImg(img, $scope)
+        $scope.find(".img-head").css("backgroundImage", "url(" + src + ")")
+    }
+}
+
+if ($("#tListWra").length) {
+    let src = "../img/jielonglogo.png"
+    // let src="/public/yz/jl_img/jielonglogo.png"
+    renderImg(src)
+}

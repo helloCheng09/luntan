@@ -6,18 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/topicList.css">
-    <link rel="stylesheet" href="./js/layui/css/layui.mobile.css">
-    <script type="text/javascript" src="./js/layui/layui.all.js"></script>
-    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <link rel="stylesheet" href="../css/topicList.css">
+    <link rel="stylesheet" href="../js/layui/css/layui.mobile.css">
+    <script type="text/javascript" src="../js/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../js/zepto.min.js"></script>
 </head>
 
 <body>
     <!-- 接龙展示列表 -->
-    <div class="wrap">
+    <div id="tListWra">
         <!-- header -->
-
-        <head class="t-head">
+        <header class="t-head">
             <div class="h-left">
                 <div class="img-head" style="background-image: url();"></div>
             </div>
@@ -28,35 +27,38 @@
                     <span class="r-comment-sum">接龙总量：8888</span>
                 </div>
             </div>
-        </head>
+        </header>
         <!-- 搜索接龙 -->
         <div class="main-show">
             <ul class="topic-list">
                 <li class="topic-item" data-id="1">
                     <a href="./topicDetail.html" class="detail-link">
                         <div class="topic-show-item">
-                            <span class="icon-show">接</span>
-                            <span class="titile">接龙标题标题标题....</span>
+                            <span class="icon-show">新</span>
+                            <span class="titile one-ellipsis">接龙标题标题标题接龙标题标题标题接龙标题标题标题接龙标题标题标题</span>
                         </div>
-                        <div class="topic-des">
-                            接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容
+                        <div class="topic-des three-ellipsis">
+                            接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容
                         </div>
                         <div class="topic-item-bot">
-                            <span class="t-author">接龙发起人：校长<em class="pre-icon">校长</em></span>
-                            <span class="t-tiem">发起时间：2018-10-10</span>
+                            <span class="t-author">发起人：<em class="pre-icon">校</em>校长</span>
+                            <span class="t-time">时间：2018-10-10</span>
                         </div>
                         <div class="com-like-num">
                             <!-- 评论 -->
-                            <span class="com-num"><em class="com-img">评论</em><em class="com-text">666</em></span>
+                            <span class="com-num"><img class="com-img" src="../img/pinglun.png"><em class="com-text">666</em></span>
                             <!-- 点赞 -->
-                            <span class="com-like"><em class="like-img">点赞</em><em class="like-text">999</em></span>
+                            <span class="com-like"><em class="like-img"></em><em class="like-text">999</em></span>
                         </div>
                     </a>
                 </li>
             </ul>
         </div>
-
     </div>
+    <!-- 主入口js -->
+    <script src="../js/gaussBlur.js" type="text/javascript"></script>
+    <!-- 主入口js -->
+    <script src="../js/index.js" type="text/javascript"></script>
 </body>
 
 </html>

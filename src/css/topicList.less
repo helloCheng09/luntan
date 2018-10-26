@@ -1,6 +1,151 @@
 @import "mReset.css";
-
-img{
-    display: inline-block;
-    width: 100px;
+#tListWra {
+    min-height: 100vh;
+    padding-bottom: 10px;
+    background-color: #f7f7f7;
+    .t-head {
+        height: 120px;
+        background-size: 100%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        display: flex;
+    }
+    .h-left {
+        display: inline-block;
+        margin: 10px;
+        vertical-align: middle;
+        .img-head {
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            border-radius: 4px;
+        }
+    }
+    .h-right {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 28px;
+        .h-r-title {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 20px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .h-r-des {
+            margin-top: 10px;
+            .r-comment-sum {
+                display: inline-block;
+                font-size: 14px;
+                color: #f8f8f8;
+            }
+            .r-comment-sum:nth-of-type(1) {
+                margin-right: 8px;
+            }
+        }
+    }
+    .main-show {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        .topic-list {
+            margin-top: 10px;
+            font-size: 0;
+            .topic-item {
+                padding: 12px 8px 4px;
+                border-bottom: 1px solid rgb(224, 224, 224);
+                background-color: #fff;
+            }
+            .detail-link {
+                color: #333;
+                .topic-show-item {
+                    margin-bottom: 4px;
+                    .icon-show {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 4px;
+                        margin-bottom: 2px;
+                        line-height: 20px;
+                        vertical-align: middle;
+                        text-align: center;
+                        border-radius: 4px;
+                        font-size: 12px;
+                        color: #fff;
+                        background-color: rgb(48, 194, 48);
+                    }
+                    .titile {
+                        display: inline-block;
+                        width: 92%;
+                        font-size: 18px;
+                        vertical-align: middle;
+                    }
+                }
+                .topic-des {
+                    margin: 0 10px 4px 20px;
+                    line-height: 1.1;
+                    font-size: 16px;
+                    color: #666;
+                }
+                .topic-item-bot {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 20px;
+                    font-size: 14px;
+                    color: #adadad;
+                    .pre-icon {
+                        margin-right: 4px;
+                        padding: 2px;
+                        border-radius: 2px;
+                        line-height: 1;
+                        vertical-align: middle;
+                        text-align: center;
+                        font-size: 12px;
+                        color: rgb(253, 255, 133);
+                        background-color: rgb(87, 174, 255);
+                    }
+                }
+                .t-author {}
+                .t-time {}
+                .com-like-num {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin: 0 20px;
+                    font-size: 14px;
+                    color: #adadad;
+                }
+                .com-like {
+                    margin-right: 10px;
+                }
+                .com-img {
+                    margin-right: 5px;
+                    margin-bottom: 2px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 16px;
+                }
+                .com-num {
+                    margin-right: 10px;
+                    margin-top: 7px
+                }
+                .like-text {
+                    vertical-align: -6px;
+                }
+                .like-img {
+                    display: inline-block;
+                    width: 23px;
+                    height: 24px;
+                    vertical-align: middle;
+                    margin-right: 0px;
+                    background: url(../img/likes.png);
+                    background-repeat: no-repeat;
+                    background-size: 483px 28px;
+                    background-position: left;
+                }
+            }
+        }
+    }
 }

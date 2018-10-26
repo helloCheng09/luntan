@@ -1,2 +1,183 @@
 @import "mReset.css";
-
+#fqWrap {
+    .com-head {
+        .head-bg {
+            width: 100%;
+            height: 163px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top left;
+        }
+    }
+    .fabu-form {
+        .fabu-item {
+            .title-text {
+                display: block;
+                margin: 0 10px;
+                line-height: 4;
+                font-size: 16px;
+                color: #8a8a8a;
+            }
+            .item-textare-panel {
+                position: relative;
+                margin: 0 25px;
+            }
+            #titileText {
+                min-height: 100px;
+                width: 100%;
+                padding: 5px;
+                font-size: 16px;
+                line-height: 1.3;
+            }
+            #titileText::placeholder {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+            .baidu-bianji {}
+        }
+        .teacher-box {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .teacher-box ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .teacher-item {
+            text-decoration: none;
+            list-style: none;
+            line-height: 2;
+            border-radius: 14px;
+            margin: 2px 4px;
+            font-size: 13px;
+            border: 1px solid #333;
+        }
+        .teacher-item label {
+            padding: 0 10px;
+        }
+        .teacher-box ul .selected {
+            border: 1px solid #6196ff;
+            background-color: #6196ff;
+            color: #fff;
+        }
+        .btn-box {
+            text-align: right;
+        }
+        .select-all {
+            position: relative;
+            font-size: 14px;
+            line-height: 2;
+            margin: 0 24px;
+        }
+        .select-all::after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            right: -30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #999;
+        }
+        .btn_selected::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            right: -26px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #6196ff;
+        }
+        .btn_selected::after {
+            border: 1px solid #6196ff;
+        }
+        
+        .students-show .btn-box {
+            margin: 0 20px;
+        }
+        .student-list .student-item input {
+            display: none;
+        }
+        .student-list .s-class-info {
+            line-height: 2;
+            font-size: 14px;
+            margin: 0 10px;
+            text-align: center;
+            color: #6196ff;
+        }
+        .student-list ul {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin: 0 10px;
+            padding: 0px 0 14px;
+        }
+        .student-list .student-item {
+            position: relative;
+            /* width: 27%; */
+            margin-right: 50px;
+            padding: 4px 0;
+            font-size: 16px;
+        }
+        .student-list .student-item label {
+            position: relative;
+            font-size: 16px;
+        }
+        .student-list .student-item label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -26px;
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+        .student-list .student-item .selected::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            right: -22px;
+            width: 14px;
+            height: 14px;
+            border-radius: 5px;
+            background-color: #6196ff;
+        }
+        .student-list .student-item .selected::before {
+            border: 1px solid #6196ff;
+        }
+        .tijiao-box {
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .tijiao-title {
+            }
+            .title-text {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 10px;
+                line-height: 4;
+                font-size: 16px;
+                color: #8a8a8a;
+            }
+            #fabuSubmit {
+                width: 70px;
+                height: 30px;
+                margin-right: 25px;
+                vertical-align: middle;
+                line-height: 30px;
+                text-align: center;
+                border-radius: 5%;
+                background-color: #6196ff;
+                text-decoration: none;
+                border: none;
+                outline: none;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+    }
+}

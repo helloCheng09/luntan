@@ -301,3 +301,19 @@ textarea::-webkit-input-placeholder {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+.one-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+.three-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
