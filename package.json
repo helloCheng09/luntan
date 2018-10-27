@@ -10,10 +10,23 @@
     "type": "git",
     "url": "git+https://github.com/helloCheng09/luntan.git"
   },
-  "author": "",
+  "author": "po_cheng",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/helloCheng09/luntan/issues"
   },
-  "homepage": "https://github.com/helloCheng09/luntan#readme"
+  "homepage": "https://github.com/helloCheng09/luntan#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-strip-debug": "^3.0.0",
+    "gulp-uglify": "^3.0.1"
+  }
 }
