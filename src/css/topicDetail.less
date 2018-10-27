@@ -1,6 +1,263 @@
 @import "mReset.css";
-
-img{
-    display: inline-block;
-    width: 100px;
+#tDetWrap {
+    background-color: #f7f7f7;
+    .topic-det {
+        margin-bottom: 10px;
+        padding: 10px 0;
+        background-color: #fff;
+        .head-det {
+            display: flex;
+            margin: 0 10px 6px;
+            .avatar-img {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                .avatar {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .right-item {
+                .nick-name {
+                    font-size: 14px;
+                }
+                .pre-icon {
+                    margin-right: 4px;
+                    padding: 2px;
+                    border-radius: 2px;
+                    line-height: 1;
+                    vertical-align: middle;
+                    text-align: center;
+                    font-size: 12px;
+                    color: rgb(253, 255, 133);
+                    background-color: rgb(87, 174, 255);
+                }
+                .xz-icon {
+                    img {
+                        max-width: 80%;
+                    }
+                }
+                .ft-time {
+                    font-size: 12px;
+                    color: #939393;
+                }
+            }
+        }
+        .topic-contain {
+            padding: 0 10px;
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                word-break: break-all;
+            }
+            img {
+                display: inline-block;
+                max-width: 80%;
+            }
+        }
+    }
+    .comment-list {
+        background-color: #fff;
+        .top-tags {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            line-height: 2.5;
+            border-bottom: 1px solid #ddd;
+            .like-tag {}
+            .link-list {
+                color: #3c6e9e;
+                label {
+                    font-size: 13px;
+                }
+            }
+            .com-tag {
+                position: relative;
+                line-height: 41px;
+                vertical-align: middle;
+                font-size: 14px;
+                font-weight: 500;
+                color: #a5aeb5;
+            }
+            .like-tag {
+                position: relative;
+                line-height: 41px;
+                vertical-align: middle;
+                font-size: 14px;
+                font-weight: 500;
+                color: #a5aeb5;
+            }
+            .checked {
+                color: #333;
+            }
+            .checked::after {
+                content: '';
+                position: absolute;
+                bottom: 4px;
+                left: 50%;
+                width: 36px;
+                height: 2px;
+                margin-left: -18px;
+                border-radius: 5px;
+                background-color: rgba(255, 157, 0, 0.972);
+            }
+        }
+        .com-main {
+            margin-top: 6px;
+            .com-item {
+                display: flex;
+                justify-content: flex-start;
+                margin: 10px 10px 6px;
+                .left-avatar {
+                    position: relative;
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 15px;
+                    border-radius: 50%;
+                    img {
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .right-detail {
+                    flex: 1;
+                    border-bottom: 1px solid #f7f7f7;
+                    .nick {
+                        font-size: 14px;
+                        line-height: 2;
+                        color: #8a8a8a;
+                    }
+                    .com-text {
+                        margin-bottom: 4px;
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+                    .zi-com {
+                        background-color: #f7f7f7;
+                    }
+                    .zi-link {
+                        display: inline-block;
+                        padding: 4px 8px;
+                        font-size: 13px;
+                        color: #333;
+                    }
+                    .zi-com-item {
+                        margin-bottom: 2px;
+                    }
+                    .zi-author {}
+                    .zi-com-text {}
+                    .com-item-bottom {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 4px;
+                        font-size: 12px;
+                        line-height: 2;
+                        color: #939393;
+                    }
+                    .show-all-zi {
+                        color: #3c6e9e;
+                    }
+                    .com-com {
+                        display: inline-block;
+                        vertical-align: bottom;
+                        height: 24px;
+                        img {
+                            margin-right: 5px;
+                            margin-bottom: 2px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 16px;
+                        }
+                    }
+                    .com-like {
+                        display: inline-block;
+                        width: 23px;
+                        height: 24px;
+                        vertical-align: middle;
+                        margin-right: 0px;
+                        background: url(../img/likes.png);
+                        background-repeat: no-repeat;
+                        background-size: 483px 28px;
+                        background-position: left;
+                    }
+                    .like-num {
+                        vertical-align: -6px;
+                    }
+                }
+            }
+        }
+    }
+    .like-list {
+        .like-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f7f7f7;
+            .avatar-img {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                margin-right: 15px;
+                border-radius: 50%;
+                img {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .nick-name {
+                line-height: 2;
+                font-size: 14px;
+            }
+            .student-parent {
+                line-height: 1.2;
+                font-size: 12px;
+                color: #a5aeb5;
+            }
+            .item-l{
+                display: flex;
+                flex: 1;
+            }
+            .item-r {
+                .zanicon-box{
+                    position: relative;
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 2px;
+                    vertical-align: middle;
+                    background-color: #ffea8f;
+                    background-image: linear-gradient(-45deg, #ffe77b ,#ffc831);
+                    border-radius: 50%;
+                }
+                .zanicon {
+                    position: absolute;
+                    top: -5px;
+                    left: 1px;
+                    display: inline-block;
+                    width: 23px;
+                    height: 24px;
+                    vertical-align: middle;
+                    margin-right: 0;
+                    background: url(../img/likes.png);
+                    background-repeat: no-repeat;
+                    background-size: 483px 28px;
+                    background-position: right;
+                }
+                .zan-text{
+                    font-size: 12px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
 }

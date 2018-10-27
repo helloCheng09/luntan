@@ -21,20 +21,10 @@ if ($(".teacher-item").length) {
     root.singleSel($(".student-item"), "selected")
 }
 
-console.log(12314)
-
-function renderImg(src) {
-    let $scope = $(document).find(".t-head")
-    var img = new Image()
-    img.src = src
-    img.onload = function () {
-        root.blurImg(img, $scope)
-        $scope.find(".img-head").css("backgroundImage", "url(" + src + ")")
-    }
-}
-
 if ($("#tListWra").length) {
     let src = "../img/jielonglogo.png"
     // let src="/public/yz/jl_img/jielonglogo.png"
-    renderImg(src)
+    root.renderImg(src)
+
+    console.log(root)
 }

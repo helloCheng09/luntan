@@ -15,25 +15,26 @@
 
 <body>
     <!-- 接龙话题详情 -->
-    <div class="wrap">
-        <div class="back-box">
+    <div id="tDetWrap">
+        <!-- <div class="back-box">
             <span class="right-item">
                 <div class="item-img">
-                    <img src="./img/home.png" alt="">
                     <div class="home-text">接龙列表</div>
                 </div>
             </span>
-        </div>
+        </div> -->
         <div class="topic-det">
             <div class="head-det">
+
                 <div class="avatar-img">
                     <img src="https://wx3.sinaimg.cn/large/65e195cdgy1fwiib1cou5j20qo0xc7pw.jpg" alt="" class="avatar">
                 </div>
                 <div class="right-item">
-                    <div class="nick-name">校长昵称<em class="xz-icon"><img src="./img/xiaozhang.png" alt=""></em></div>
-                    <div class="ft-time">发起时间：2018-10-24</div>
+                    <div class="nick-name"><em class="pre-icon">校</em>校长昵称<em class="xz-icon"></em></div>
+                    <div class="ft-time">发布时间：2018-10-24</div>
                 </div>
             </div>
+
             <!-- 百度编辑后 正文内容 -->
             <div class="topic-contain">
                 <p> 这是正文正文这是正文正文这是正文正文这是正文正文</p>
@@ -43,15 +44,19 @@
 
         <div class="comment-list">
             <div class="top-tags">
-                <span class="com-tag" id="comTag">评论：666</span>
+                <a href="./topicList.html" class="link-list">
+                    <label>返回接龙列表</label>
+                </a>
+                <span class="com-tag checked" id="comTag">评论：666</span>
                 <span class="like-tag" id="likeTag">赞：99</span>
             </div>
             <div class="com-main">
                 <!-- 评论列表 -->
-                <ul class="com-list">
+                <ul class="com-list" style="display:none;">
                     <li class="com-item" data-id="1">
                         <span class="left-avatar">
-                            <div class="avatar-img">头像</div>
+                            <img src="https://ww4.sinaimg.cn/orj480/0062Mr4Vjw8epo890ks01j30f00f00tt.jpg" class="img"
+                                alt="">
                         </span>
                         <span class="right-detail">
                             <div class="nick">学生家长1</div>
@@ -67,26 +72,42 @@
                                         <span class="zi-author">家长2</span><em>回复</em><span class="zi-author">家长66：</span>
                                         <span class="zi-com-text">评论的评论</span>
                                     </div>
-                                    <div class="show-all-zi">共8条评论</div>
+                                    <div class="show-all-zi">共8条评论 ></div>
                                 </a>
                             </div>
-                        </span>
-                        <div class="com-item-bottom">
-                            <span class="com-time">9分钟前</span>
-                            <div class="like-com">
-                                <em class="com-like">点赞</em><em class="like-num">88</em>
-                                <em class="com-like">评论</em>
+                            <div class="com-item-bottom">
+                                <span class="com-time">9分钟前</span>
+                                <div class="like-com">
+                                    <em class="com-com">
+                                        <a href="./commentDetail.html">
+                                            <img src="../img/pinglun.png" alt="" class="com-im">
+                                        </a>
+                                    </em>
+                                    <em class="com-like" style="background-image:url(../img/likes.png)"></em><em class="like-num">88</em>
+                                </div>
                             </div>
-                        </div>
+                        </span>
                     </li>
                 </ul>
                 <!-- 点赞列表 -->
-                <ul class="like-list" style="display:none;">
+                <ul class="like-list">
                     <li class="like-item">
-                        <div class="avatar-img">
-                            <div class="avatar">点赞得头像</div>
+                        <div class="item-l">
+                            <div class="avatar-img">
+                                <img src="https://ww4.sinaimg.cn/orj480/0062Mr4Vjw8epo890ks01j30f00f00tt.jpg" class="img"
+                                    alt="">
+                            </div>
+                            <span class="like-det-right">
+                                <div class="nick-name">家长1</div>
+                                <div class="student-parent">绑定的学生：xxxxxxx</div>
+                            </span>
                         </div>
-                        <span class="nick-name">家长1</span>
+                        <div class="item-r">
+                            <span class="zanicon-box">
+                                <span class="zanicon"></span>
+                            </span>
+                            <span class="zan-text">赞</span>
+                        </div>
                     </li>
                 </ul>
             </div>
