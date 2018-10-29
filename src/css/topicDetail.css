@@ -49,6 +49,9 @@
 }
 #tDetWrap .topic-det .topic-contain {
   padding: 0 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  word-break: break-all;
 }
 #tDetWrap .topic-det .topic-contain p {
   font-size: 16px;
@@ -58,6 +61,30 @@
 #tDetWrap .topic-det .topic-contain img {
   display: inline-block;
   max-width: 80%;
+}
+#tDetWrap .topic-det .main-max-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+}
+#tDetWrap .topic-det .main-max-list .swiper-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#tDetWrap .topic-det .main-max-list .main-img-max {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+#tDetWrap .topic-det .main-max-list img {
+  width: 100%;
 }
 #tDetWrap .comment-list {
   background-color: #fff;
@@ -123,8 +150,8 @@
 #tDetWrap .comment-list .com-main .com-item .left-avatar {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin-right: 15px;
   border-radius: 50%;
 }
@@ -190,6 +217,7 @@
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .zi-com-item {
   margin-bottom: 6px;
+  line-height: 1.5;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .zi-com-item em {
   margin: 0 4px;
@@ -209,7 +237,7 @@
 #tDetWrap .comment-list .com-main .com-item .right-detail .com-com {
   display: inline-block;
   vertical-align: bottom;
-  height: 24px;
+  height: 21px;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .com-com img {
   margin-right: 5px;
@@ -304,6 +332,7 @@
   animation: zanAni steps(1, end) 750ms forwards;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .like-num {
+  line-height: 1.3;
   vertical-align: -5px;
 }
 #tDetWrap .comment-list #subForm_2,

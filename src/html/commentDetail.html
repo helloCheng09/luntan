@@ -4,104 +4,127 @@
 <head>
     <title>8条接龙</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/commentDetail.css">
-    <link rel="stylesheet" href="./js/layui/css/layui.mobile.css">
-    <script type="text/javascript" src="./js/layui/layui.all.js"></script>
-    <script type="text/javascript" src="./js/zepto.min.js"></script>
-    <script type="text/javascript" src="./js/autoTextarae.js"></script>
+    <link rel="stylesheet" href="../css/commentDetail.css">
+    <link rel="stylesheet" href="../js/layui/css/layui.mobile.css">
+    <script type="text/javascript" src="../js/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../js/zepto.min.js"></script>
+    <script type="text/javascript" src="../js/autoTextarae.js"></script>
 </head>
 
 <body>
     <!-- 接龙回复详情 -->
-    <div class="wrap">
+    <div id="comDetWrap">
         <div class="com-item">
             <span class="left-avatar">
-                <div class="avatar-img">头像</div>
+                <img src="https://ww4.sinaimg.cn/orj480/0062Mr4Vjw8epo890ks01j30f00f00tt.jpg" class="img" alt="">
             </span>
-            <span class="right-detail">
-                <div class="nick">学生家长1</div>
-                <div class="com-text">这是评论内容</div>
-            </span>
-            <div class="com-item-bottom">
-                <span class="com-time">9分钟前</span>
-                <div class="like-com">
-                    <em class="com-like">点赞</em><em class="like-num">88</em>
-                    <em class="com-like">评论</em>
+            <div class="right-container">
+                <div class="right-top">
+                    <div class="r-t-left">
+                        <div class="nick">学生家长1</div>
+                        <span class="com-time">9分钟前</span>
+                    </div>
+                    <div class="r-t-right">
+                        <span class="com-com">
+                            <img src="../img/pinglun.png" alt="" class="com-im">
+                        </span>
+                        <em class="com-like nozan" like-status="0" style="background-image: url(../img/likes.png);"></em><em
+                            class="like-num">66</em>
+                    </div>
                 </div>
+                <div class="com-text">这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容</div>
+                <ul class="img-list">
+                    <li class="comment-img-box">
+                        <div class="img-conten">
+                            <div class="show-img" style="background-image:url(../img/banner.jpg)"></div>
+                        </div>
+                        <div class="img-max-box" style="display:none;">
+                            <img class="show-max" src="../img/banner.jpg">
+                        </div>
+                    </li>
+                    <li class="comment-img-box">
+                        <div class="img-conten">
+                            <div class="show-img" style="background-image:url(../img/banner.jpg)"></div>
+                        </div>
+                        <div class="img-max-box" style="display:none;">
+                            <img class="show-max" src="../img/banner.jpg">
+                        </div>
+                    </li>
+                    <li class="comment-img-box">
+                        <div class="img-conten">
+                            <div class="show-img" style="background-image:url(../img/banner.jpg)"></div>
+                        </div>
+                        <div class="img-max-box" style="display:none;">
+                            <img class="show-max" src="../img/banner.jpg">
+                        </div>
+                    </li>
+                </ul>
+                <a href="/topicDetail.html" class="com-link">查看原接龙</a>
             </div>
-            <a href="/topicDetail.html" class="com-link">查看原接龙</a>
         </div>
         <ul class="zi-com-list">
             <!-- 正常回复子评论 -->
             <li class="zi-com-item">
                 <span class="left-avatar">
-                    <div class="avatar-img">头像</div>
+                    <img src="https://ww4.sinaimg.cn/orj480/0062Mr4Vjw8epo890ks01j30f00f00tt.jpg" class="img" alt="">
                 </span>
                 <span class="right-detail">
-                    <span class="nick">学生家长55</span>
-                    <div class="com-text">这是评论内容</div>
-                </span>
-                <div class="com-item-bottom">
-                    <span class="com-time">9分钟前</span>
-                    <div class="like-com">
-                        <em class="com-like">点赞</em><em class="like-num">88</em>
-                        <em class="com-like">评论</em>
+                    <div class="nick-box">
+                        <div class="nick">学生家长1</div>
+                        <div class="zi-com-det">
+                            <div class="student-parent">绑定的学生：xxxxxxx</div>
+                            <span class="com-time">9分钟前</span>
+                        </div>
                     </div>
-                </div>
+                    <div class="com-text">这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容这是评论内容</div>
+                </span>
             </li>
             <!-- 评论 子评论的评论 -->
             <li class="zi-com-item">
                 <span class="left-avatar">
-                    <div class="avatar-img">头像4</div>
+                    <img src="https://ww4.sinaimg.cn/orj480/0062Mr4Vjw8epo890ks01j30f00f00tt.jpg" class="img" alt="">
                 </span>
                 <span class="right-detail">
-                    <div class="nick">学生家长999</div>
+                    <div class="nick-box">
+                        <div class="nick">学生家长1</div>
+                        <div class="zi-com-det">
+                            <div class="student-parent">绑定的学生：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                            <span class="com-time">9分钟前</span>
+                        </div>
+                    </div>
                     <div class="com-text">
-                        <em class="comment-tag">回复</em>
-                        <span class="nick">学生家长1:</span>
-                        <span class="det-main">这是评论内容</span>
+                        <em class="comment-tag-hf">回复</em>
+                        <span class="nick">学生家长9999:</span>
+                        <span class="det-main">你的评论太精彩了！！</span>
                     </div>
                 </span>
-                <div class="com-item-bottom">
-                    <span class="com-time">9分钟前</span>
-                    <div class="like-com">
-                        <em class="com-like">点赞</em><em class="like-num">88</em>
-                        <em class="com-like">评论</em>
-                    </div>
-                </div>
             </li>
         </ul>
-        <!-- 回复评论内容 -->
-        <div class="hid-re-com" style="display:none;">
-            <div class="re-com-panel">
-                <div class="re-com">回复</div>
-                <div class="re-cancle">取消</div>
-            </div>
-        </div>
         <!-- 回复接龙话题 -->
         <footer class="com-topic">
-            <div class="com-this-topic" id="comThis">回复接龙</div>
-            <span class="like-btn">
-                <em class="like-btn-show">点赞</em>
+            <span class="footer-btn">
+                <div class="com-this-topic" id="comThis">回复评论</div>
+            </span>
+            <span class="footer-btn">
+                <em class="like-btn-show">点赞评论</em>
             </span>
         </footer>
-        <!-- 提交回复表单 -->
-        <div class="hid-form" style="display:none">
-            <form action="">
+        <!-- 提交回复评论 表单  -->
+        <div class="hid-re-form" id="subForm_2" style="display:none;">
+            <div class="blank-close"></div>
+            <form action="" enctype="multipart/form-data">
                 <div class="text-box">
-                    <textarea name="comment" id="" placeholder="写评论"></textarea>
+                    <textarea name="comment" id="" placeholder="回复接龙评论"></textarea>
                 </div>
                 <div class="submit-btn">
                     <!-- <span class="face-btn">
-                        <img src="./img/face.png" alt="">
-                    </span> -->
+                                <img src="./img/face.png" alt="">
+                            </span> -->
                     <span class="fasong-btn">
                         <input type="submit" id="submitBtn" value="发送回复">
-                    </span>
-                    <span class="cancle-btn">
-                        <input type="button" id="submitBtn" value="取消">
+                        <!-- <input type="button" id="submitBtn" value="取消"> -->
                     </span>
                 </div>
             </form>

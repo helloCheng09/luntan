@@ -33,7 +33,7 @@ if ($("#fqWrap").length) {
  */
 if ($("#tListWra").length) {
     // let src = "../img/jielonglogo.png"
-    let src="/public/yz/jl_img/jielonglogo.png"
+    let src = "/public/yz/jl_img/jielonglogo.png"
     root.renderImg(src)
 
     console.log(root)
@@ -109,10 +109,35 @@ if ($("#tDetWrap").length) {
         $("#subForm_2").css("display", "none")
     })
 
-
     // 文本框自适应
     let textaraeEle = document.getElementsByTagName("textarea")
     root.autoTextarea(textaraeEle[0])
+
+    // 实例化图片放大轮播
+    root.getImgSrc()
+
+    $(".topic-contain p img").on("click", function () {
+        let index = $(this).index()
+        $(".main-max-list").css("display", "block").on("click", function () {
+            $(this).css("display", "none")
+        })
+        let myMaxImg = new Swiper('#showPanel', {
+            initialSlide: index,
+        })
+    })
+
+    // 上传图片
+    $('#image').on('change', function (e) {
+        var file = this.files[0]
+        var formData = new FormData();
+        formData.append('userfile', file);
+        console.log(formData)
+        root.pushImg(formData)
+    });
+
+
+
+
 
 
 
