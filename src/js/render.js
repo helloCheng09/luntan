@@ -9,20 +9,6 @@
         }
     }
 
-    function clickLike() {
-        $(".com-like").on("click", function () {
-            let islike = $(this).attr("like-status")
-            if (islike == 0) {
-                let num = Number($(this).next(".like-num").text()) + 1
-                console.log(num)
-                $(this).attr("like-status", "1")
-                $(this).addClass("addlike")
-                $(this).next(".like-num").text(num)
-            }
-
-        })
-    }
-
     // 渲染话题大图
     function maxImgShow(src) {
         let srcImg = src
@@ -50,55 +36,31 @@
             `
         $("#imgInput").append(html)
         // 删除
-        deletImg()
+        root.deletImg()
         // 放大
-        maxImg()
+        root.maxImg()
+        // 判断图片数量
+        root.showUpload()
     }
 
-    //  删除预览图片
-    function deletImg() {
-        $(".img-input-item").each(function () {
-            let ele = $(this)
-            $(this).find(".delet").on("click", function () {
-                ele.remove()
-                console.log("删除图片")
-            })
-        })
-    }
-
-    // 最大话上传图片
-    function maxImg() {
-        $(".img-input-item").each(function () {
-            let ele = $(this)
-            $(this).on("click", function () {
-                ele.find(".img-max-box").css("display", "flex")
-                closeScan()
-
-            })
-        })
-    }
-    // 关闭最大化
-    function closeScan() {
-        $(".show-max").on("click", function () {
-            $(".img-max-box").css("display", "none")
-            console.log(12314)
-            return false
-        })
+    // 查看上传图片数量，如果超过四张
+    function showUpload() {
+        let len = Number($("#imgInput").find(".img-input-item").length)
+        console.log(len)
+        if (len > 3) {
+            $(".add-input-img").css("display", "none")
+            console.log("还不关？？")
+        } else {
+            $(".add-input-img").css("display", "block")
+        }
     }
 
     // 模糊背景
     root.renderImg = renderImg
-
-    // 点赞
-    root.clickLike = clickLike
-
     // 渲染话题大图
     root.maxImgShow = maxImgShow
-
     // 渲染后台地址 上传图
     root.renderComImg = renderComImg
-    // 上传图片删除 放大
-    root.maxImg = maxImg
-    root.deletImg = deletImg
+    root.showUpload = showUpload
 
 }(window.Zepto, window.topic || (window.topic = {})))

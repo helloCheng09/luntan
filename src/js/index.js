@@ -67,7 +67,12 @@ if ($("#tDetWrap").length) {
         }
     })
 
-    // 判断是否点赞
+    // 判断是否点赞 话题
+    let isTopicLike = $("#likeTag").attr("like-status")
+    if(isTopicLike == 1){
+        $("#topicLike").css("display","inline-block")
+    }
+    // 判断是否点赞 评论
     $(".com-like").each(function () {
         let islike = $(this).attr("like-status")
         console.log(islike)
@@ -135,13 +140,10 @@ if ($("#tDetWrap").length) {
         root.pushImg(formData)
     });
 
-
-
-
-
-
-
-
+    // 最大化评论图片
+    root.comMaxImg()
+    // 点赞话题
+    root.likeTopic()
 
 
 

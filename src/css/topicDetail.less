@@ -90,6 +90,7 @@
         }
     }
     .comment-list {
+        padding-bottom: 20px;
         background-color: #fff;
         .top-tags {
             display: flex;
@@ -113,11 +114,36 @@
             }
             .like-tag {
                 position: relative;
+                display: flex;  
                 line-height: 41px;
                 vertical-align: middle;
                 font-size: 14px;
                 font-weight: 500;
                 color: #a5aeb5;
+                .zanicon-box {
+                    position: relative;
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 2px;
+                    vertical-align: middle;
+                    // background-color: #ffea8f;
+                    // background-image: linear-gradient(-45deg, #ffe77b, #ffc831);
+                    border-radius: 50%;
+                     .zanicon {
+                        position: absolute;
+                        top: -5px;
+                        left: 1px;
+                        display: inline-block;
+                        width: 23px;
+                        height: 24px;
+                        vertical-align: middle;
+                        margin-right: 0;
+                        background-repeat: no-repeat;
+                        background-size: 483px 28px;
+                        background-position: right;
+                    }
+                }
             }
             .liked-avatar {
                 display: inline-block;
@@ -133,8 +159,8 @@
                 content: '';
                 position: absolute;
                 bottom: 4px;
-                left: 50%;
-                width: 36px;
+                left: 40%;
+                width: 80%;
                 height: 2px;
                 margin-left: -18px;
                 border-radius: 5px;
@@ -193,6 +219,22 @@
                         min-width: 50%;
                         padding-right: 4px;
                         padding-bottom: 4px;
+                    }
+                    .img-max-box {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        z-index: 9999;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(0, 0, 0, 1);
+                        .show-max {
+                            display: inline-block;
+                            width: 100%;
+                        }
                     }
                     .show-img {
                         position: absolute;
@@ -410,6 +452,9 @@
                 display: flex;
                 font-size: 0;
                 margin-left: -2.5px;
+                li {
+                    margin-top: 10px;
+                }
                 .img-input-item {
                     position: relative;
                     .delet {
@@ -456,7 +501,7 @@
                     display: inline-block;
                     width: 80px;
                     height: 80px;
-                    margin: 0 5px;
+                    margin: 10px 5px 0;
                     background-size: cover;
                     background-position: 50%;
                     border: 1px dashed #ddd;

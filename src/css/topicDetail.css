@@ -87,6 +87,7 @@
   width: 100%;
 }
 #tDetWrap .comment-list {
+  padding-bottom: 20px;
   background-color: #fff;
 }
 #tDetWrap .comment-list .top-tags {
@@ -112,11 +113,34 @@
 }
 #tDetWrap .comment-list .top-tags .like-tag {
   position: relative;
+  display: flex;
   line-height: 41px;
   vertical-align: middle;
   font-size: 14px;
   font-weight: 500;
   color: #a5aeb5;
+}
+#tDetWrap .comment-list .top-tags .like-tag .zanicon-box {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 2px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+#tDetWrap .comment-list .top-tags .like-tag .zanicon-box .zanicon {
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  display: inline-block;
+  width: 23px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 0;
+  background-repeat: no-repeat;
+  background-size: 483px 28px;
+  background-position: right;
 }
 #tDetWrap .comment-list .top-tags .liked-avatar {
   display: inline-block;
@@ -132,8 +156,8 @@
   content: '';
   position: absolute;
   bottom: 4px;
-  left: 50%;
-  width: 36px;
+  left: 40%;
+  width: 80%;
   height: 2px;
   margin-left: -18px;
   border-radius: 5px;
@@ -192,6 +216,22 @@
   min-width: 50%;
   padding-right: 4px;
   padding-bottom: 4px;
+}
+#tDetWrap .comment-list .com-main .com-item .right-detail .img-max-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+#tDetWrap .comment-list .com-main .com-item .right-detail .img-max-box .show-max {
+  display: inline-block;
+  width: 100%;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .show-img {
   position: absolute;
@@ -409,6 +449,9 @@
   font-size: 0;
   margin-left: -2.5px;
 }
+#tDetWrap .comment-list #subForm_1 ul li {
+  margin-top: 10px;
+}
 #tDetWrap .comment-list #subForm_1 ul .img-input-item {
   position: relative;
 }
@@ -455,7 +498,7 @@
   display: inline-block;
   width: 80px;
   height: 80px;
-  margin: 0 5px;
+  margin: 10px 5px 0;
   background-size: cover;
   background-position: 50%;
   border: 1px dashed #ddd;

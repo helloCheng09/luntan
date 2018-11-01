@@ -31,10 +31,33 @@
         root.renderComImg(url)
     }
 
+    // 发送点赞事件给后台
+    function sentLike (url, likeArr) {
+        console.log(likeArr)
+        console.log('请求地址：' + url)
+        $.ajax({
+            url:url,
+            type:'POST',
+            // dataType: 'json',
+            data:likeArr,
+            error:error,
+            success:success
+        })
+    }
+    function error(data, status){
+        console.log(data)
+        console.log(status)
+        alert("哎呀~网络出错了！")
+    }
 
+    function success (data, status){
+        console.log(data)
+        console.log(status)
+    }
+
+    root.sentLike = sentLike
     // 获取话题内容图片地址
     root.getImgSrc = getImgSrc
-
     // 图片传后台
     root.pushImg = pushImg
 }(window.Zepto, window.topic || (window.topic = {})))
