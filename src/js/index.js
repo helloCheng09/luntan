@@ -71,6 +71,7 @@ if ($("#tDetWrap").length) {
     let isTopicLike = $("#likeTag").attr("like-status")
     if(isTopicLike == 1){
         $("#topicLike").css("display","inline-block")
+        $(".like-btn-show").css("color","#ccc")
     }
     // 判断是否点赞 评论
     $(".com-like").each(function () {
