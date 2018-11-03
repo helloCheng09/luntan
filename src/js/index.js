@@ -2,7 +2,6 @@ let $ = window.Zepto
 let $scope = $(window.document)
 let root = window.topic
 
-
 /***************************************************************************** */
 /**
  * 提交页面 入口
@@ -25,26 +24,20 @@ if ($("#fqWrap").length) {
     root.multiSelect($(".teacher-item"), "selected")
     root.selectAllBtn($("#selAll"), "btn_selected")
     root.singleSel($(".student-item"), "selected")
-}
+} else if ($("#tListWra").length) {
+    /**
+     * 接龙话题列表 入口
+     */
 
-/***************************************************************************** */
-/**
- * 接龙话题列表 入口
- */
-if ($("#tListWra").length) {
     // let src = "../img/jielonglogo.png"
     let src = "/public/yz/jl_img/jielonglogo.png"
     root.renderImg(src)
 
     console.log(root)
-}
-
-/***************************************************************************** */
-/**
- * 接龙话题详情 入口
- */
-
-if ($("#tDetWrap").length) {
+} else if ($("#tDetWrap").length) {
+    /**
+     * 接龙话题详情 入口
+     */
     //  评论和点赞 列表展示切换
     $(".top-tags .com-tag").on("click", function () {
         let flag = $(this).hasClass("checked")
@@ -65,13 +58,12 @@ if ($("#tDetWrap").length) {
             $(".com-list").css("display", "none")
             console.log("点赞列表")
         }
-    })
-
+    }) 
     // 判断是否点赞 话题
     let isTopicLike = $("#likeTag").attr("like-status")
-    if(isTopicLike == 1){
-        $("#topicLike").css("display","inline-block")
-        $(".like-btn-show").css("color","#ccc")
+    if (isTopicLike == 1) {
+        $("#topicLike").css("display", "inline-block")
+        $(".like-btn-show").css("color", "#ccc")
     }
     // 判断是否点赞 评论
     $(".com-like").each(function () {
@@ -121,7 +113,6 @@ if ($("#tDetWrap").length) {
 
     // 实例化图片放大轮播
     root.getImgSrc()
-
     $(".topic-contain p img").on("click", function () {
         let index = $(this).index()
         $(".main-max-list").css("display", "block").on("click", function () {
@@ -148,20 +139,6 @@ if ($("#tDetWrap").length) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} else if ($("#comDetWrap").length) {
+    
 }
