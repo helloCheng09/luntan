@@ -58,7 +58,7 @@ if ($("#fqWrap").length) {
             $(".com-list").css("display", "none")
             console.log("点赞列表")
         }
-    }) 
+    })
     // 判断是否点赞 话题
     let isTopicLike = $("#likeTag").attr("like-status")
     if (isTopicLike == 1) {
@@ -87,10 +87,19 @@ if ($("#fqWrap").length) {
         // let huiObj = "写回复 " +  $("#tDetWrap").find(".xz-text").text()
         let huiObj = "写回复 "
         $("#subForm_1").find("textarea").attr("placeholder", huiObj)
+        // 安卓手机，输入的时候，隐藏发送回复按钮
+        let type = root.phoneType()
+        // if (type !== "ios") {
+        //     $("#subForm_1 .text-box").find("textarea").focus(function () {
+        //         $("#submitBtn").hide()
+        //     })
+        // }
     })
     $("#subForm_1 .blank-close").on("click", function () {
         $("#subForm_1").css("display", "none")
     })
+
+
 
     // 回复评论
     $(".com-item").each(function () {
@@ -123,13 +132,26 @@ if ($("#fqWrap").length) {
         })
     })
 
+    let urlSelf
     // 上传图片
-    $('#image').on('change', function (e) {
+    $('#file').on('change', function (e) {
         var file = this.files[0]
         var formData = new FormData();
+        // formData.append('userfile', file);
         formData.append('userfile', file);
-        console.log(formData)
-        root.pushImg(formData)
+
+        // 获取图片本地base64
+        let reads = new FileReader();
+        let f = document.getElementById('file').files[0];
+        reads.readAsDataURL(f);
+        reads.onload = function (e) {
+            urlSelf = this.result
+            console.log(urlSelf)
+            root.urlSelf = urlSelf
+            console.log(formData)
+            root.pushImg(formData)
+        };
+
     });
 
     // 最大化评论图片
@@ -137,8 +159,28 @@ if ($("#fqWrap").length) {
     // 点赞话题
     root.likeTopic()
 
+} else if (document.getElementById("comDetWrap")) {
+    console.log("评论详情")
 
+    // 实例化图片放大轮播
+    root.getDivSrc()
+    console.log("评论详情")
+    console.log("评论详情")
+    $(".comment-img-box").on("click", function () {
+        let index = $(this).index()
+        console.log(index)
+        $(".main-max-list").css("display", "block").on("click", function () {
+            $(this).css("display", "none")
+        })
+        let myMaxImg = new Swiper('#showPanel', {
+            initialSlide: index,
+        })
+    })
 
-} else if ($("#comDetWrap").length) {
-    
+    // 初始化 当前用户对评论的点赞情况
+    root.initComLike ()
+
+    root.showZiForm ()
+    root.likeComment ()
+
 }

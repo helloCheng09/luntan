@@ -203,7 +203,7 @@
                     <div class="img-input-box">
                         <ul id="imgInput">
                             <li class="add-input-img" style="background-image: url(../img/addimg.png);">
-                                <input id="file" class="add-input-img" onchange="getSrc(this)" style="opacity: 0;background-image: url(../img/addimg.png);"
+                                <input id="file"  multiple="multiple"  class="add-input-img" onchange="getSrc(this)" style="opacity: 0;background-image: url(../img/addimg.png);"
                                     class="filepath" type="file">
                             </li>
                         </ul>
@@ -231,7 +231,7 @@
                                 <img src="./img/face.png" alt="">
                             </span> -->
                         <span class="fasong-btn">
-                            <input type="submit" id="submitBtn" value="发送回复">
+                            <input type="submit" id="submitBtnZi" value="发送回复">
                             <!-- <input type="button" id="submitBtn" value="取消"> -->
                         </span>
                     </div>
@@ -250,12 +250,12 @@
         </div>
     </div>
 
+    <!-- 点击事件 -->
+    <script src="../js/click.js" type="text/javascript"></script>
     <!-- 渲染 -->
     <script src="../js/render.js" type="text/javascript"></script>
     <!-- 获取数据 -->
     <script src="../js/getData.js" type="text/javascript"></script>
-    <!-- 点击事件 -->
-    <script src="../js/click.js" type="text/javascript"></script>
     <!-- 主入口js -->
     <script src="../js/index.js" type="text/javascript"></script>
 
@@ -297,7 +297,7 @@
         function renderComImg(url) {
             let img_num = $("#imgInput").find(".img-input-item").length + 1
             console.log(img_num)
-
+            
             let html =
                 `
                     <li class="img-input-item" img-id="${img_num}">

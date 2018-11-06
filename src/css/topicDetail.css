@@ -32,10 +32,10 @@
 }
 #tDetWrap .topic-det .head-det .right-item .nick-name {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 #tDetWrap .topic-det .head-det .right-item .xz-text {
-  font-size: 16px;
+  font-size: 1.4rem;
 }
 #tDetWrap .topic-det .head-det .right-item .pre-icon {
   margin-right: 4px;
@@ -60,12 +60,12 @@
 }
 #tDetWrap .topic-det .topic-contain {
   padding: 0 10px;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 1.4rem;
+  line-height: 1.3;
   word-break: break-all;
 }
 #tDetWrap .topic-det .topic-contain p {
-  font-size: 16px;
+  font-size: 1.4rem;
   line-height: 1.5;
   word-break: break-all;
 }
@@ -112,7 +112,7 @@
   color: #3c6e9e;
 }
 #tDetWrap .comment-list .top-tags .link-list label {
-  font-size: 13px;
+  font-size: 15px;
 }
 #tDetWrap .comment-list .top-tags .com-tag {
   position: relative;
@@ -204,13 +204,13 @@
   margin-bottom: 5px;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .nick-box .nick {
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.5;
   color: #333;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .nick-box .student-parent {
   line-height: 1.2;
-  font-size: 12px;
+  font-size: 15px;
   color: #a5aeb5;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .img-list {
@@ -254,7 +254,7 @@
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .com-text {
   margin-bottom: 4px;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.5;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .zi-com {
@@ -271,8 +271,15 @@
   line-height: 1.5;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .zi-com-item em {
+  font-size: 1.4rem;
   margin: 0 4px;
   color: #3c6e9e;
+}
+#tDetWrap .comment-list .com-main .com-item .right-detail .zi-com-item .zi-com-text {
+  font-size: 1.4rem;
+}
+#tDetWrap .comment-list .com-main .com-item .right-detail .zi-author {
+  font-size: 1.4rem;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .com-item-bottom {
   display: flex;
@@ -283,6 +290,7 @@
   color: #939393;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .show-all-zi {
+  font-size: 1.4rem;
   color: #3c6e9e;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .com-com {
@@ -295,7 +303,7 @@
   margin-bottom: 2px;
   display: inline-block;
   vertical-align: middle;
-  width: 16px;
+  width: 1.4rem;
 }
 @keyframes zanAni {
   0% {
@@ -420,10 +428,21 @@
 #tDetWrap .comment-list #subForm_1 .fasong-btn {
   display: inline-block;
   width: 100%;
+  margin-top: 50px;
   text-align: right;
 }
 #tDetWrap .comment-list #subForm_2 #submitBtn,
 #tDetWrap .comment-list #subForm_1 #submitBtn {
+  border: none;
+  height: 40px;
+  width: 80px;
+  margin: 0 30px;
+  border-radius: 3px;
+  background-color: #6196ff;
+  color: #fff;
+}
+#tDetWrap .comment-list #subForm_2 #submitBtnZi,
+#tDetWrap .comment-list #subForm_1 #submitBtnZi {
   border: none;
   height: 40px;
   width: 80px;
@@ -441,16 +460,16 @@
 #tDetWrap .comment-list #subForm_1 .text-box textarea {
   display: inline-block;
   width: 100%;
-  height: 150px;
+  height: 80px;
   padding: 6px 8px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 1.4rem;
   line-height: 1.1;
   resize: none;
   border-color: #ddd;
 }
 #tDetWrap .comment-list #subForm_1 form {
-  height: 350px;
+  height: 255px;
 }
 #tDetWrap .comment-list #subForm_1 .img-input-box {
   margin: 0 10px 20px;
@@ -567,7 +586,7 @@
 }
 #tDetWrap .like-list .like-item .student-parent {
   line-height: 1.2;
-  font-size: 12px;
+  font-size: 14px;
   color: #a5aeb5;
 }
 #tDetWrap .like-list .like-item .item-l {

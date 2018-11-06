@@ -1,4 +1,5 @@
 (function ($, root) {
+
     function renderImg(src) {
         let $scope = $(document).find(".t-head")
         var img = new Image()
@@ -15,6 +16,18 @@
         let html = `
             <div class="main-img-max swiper-slide">
                  <img src="${srcImg}">
+            </div>
+            `
+        $("#showConMax").append(html)
+    }
+
+    // 渲染话题大图
+    function maxDivShow(url) {
+        let urlImg = "background-image:" + url
+        console.log(urlImg)
+        let html = `
+            <div class="main-img-max swiper-slide">
+                <div class="show-img" style=${urlImg}></div>
             </div>
             `
         $("#showConMax").append(html)
@@ -43,13 +56,16 @@
     //     root.showUpload()
     // }
     function renderComImg(url) {
+        let urlSelf = root.urlSelf
+        console.log(root)
         let img_num = $("#imgInput").find(".img-input-item").length + 1
         console.log(img_num)
         let html =
             `
                 <li class="img-input-item" img-id="${img_num}">
                     <em class="delet" style="background-image:url(/public/yz/jl_img/deletimg.png)"></em>
-                    <input class="img-con" name="imgUpload[]" value= "${url}" style="background-image:url(${url})">
+                    <div class="img-con" style="background-image:url(${urlSelf})"></div>
+                    <input name="imgUpload[]" style=" display:none;" value= "${url}">
                     <div class="img-max-box">
                         <img class="show-max" src="${url}">
                     </div>
@@ -76,6 +92,34 @@
         }
     }
 
+
+    // 判断手机类型
+    let phoneType = () => {
+        var u = navigator.userAgent;
+        if (u.indexOf('Android') > - 1 || u.indexOf('Linux') > - 1) { //安卓手机
+            return "Android"
+            // window.location.href = "mobile/index.html";
+        } else if (u.indexOf('iPhone') > - 1) { //苹果手机
+            // window.location.href = "mobile/index.html";
+            return "ios"
+        } else if (u.indexOf('Windows Phone') > - 1) { //winphone手机
+            return "windows"
+            // window.location.href = "mobile/index.html";
+        }
+    }
+
+    // 初始化 当前用户对评论的点赞情况
+    let initComLike = () => {
+        let likeStatus = $("#likeTag").attr("like-status")
+        if (likeStatus === "1") {
+            $(".r-t-right .com-like").addClass("hadzan")
+            $(".dianzan_topic").css("color", "#ccc")
+        }
+    }
+
+    root.initComLike = initComLike
+    root.phoneType = phoneType
+    root.maxDivShow = maxDivShow
     // 模糊背景
     root.renderImg = renderImg
     // 渲染话题大图

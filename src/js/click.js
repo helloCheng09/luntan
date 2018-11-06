@@ -83,11 +83,12 @@
                 let html = `
                     <img src="https://ww4.sinaimg.cn/orj480/0062Mr4Vjw8epo890ks01j30f00f00tt.jpg" alt="" class="liked-avatar">
                 `
-                let likeNum = Number(Number($(".like-topic-sum").text()) + 1)
+                let likeNum = (Number($(".like-topic-sum").text()) + 1)
                 $(".like-topic-sum").text(likeNum)
                 $("#topicLike").css("display", "inline-block")
                 // $("#likeTag").prepend(html)
                 $("#likeTag").attr("like-status", "1")
+                $(".like-btn-show").css("color", "#ccc")
                 let url = 'http://www.mamawozaizhe.com/yz/mobile2/jielong/zanAjax'
                 let likeArr = {
                     "comid": topicId,
@@ -98,6 +99,56 @@
         })
     }
 
+    // 回复子评论
+
+    let showZiForm = () => {
+        $(".footer-btn").eq(0).on("click", function () {
+            let auth = $(".right-container .nick").text()
+            let text = "回复 " + auth + " 内容"
+
+            $("#subForm_2").find("textarea").attr("placeholder", text)
+            $("#subForm_2").show()
+            root.closeZiForm()
+        })
+    }
+
+
+    // 关闭子评论回复框
+    let closeZiForm = () => {
+        $(".blank-close").on("click", () => {
+            $("#subForm_2").hide()
+        })
+    }
+
+    // 子评论页面 点赞评论
+    let likeComment = () => {
+        $(".footer-btn").eq(1).on("click", function () {
+            let topicId = $(".right-container").attr("topic-id")
+            console.log(topicId)
+            if ($("#likeTag").attr("like-status") == 0) {
+                // let html = `
+                //     <img src="https://ww4.sinaimg.cn/orj480/0062Mr4Vjw8epo890ks01j30f00f00tt.jpg" alt="" class="liked-avatar">
+                // `
+                $("#likeTag").removeClass("nozan").addClass("addlike")
+                let likeNum = (Number($(".like-num").text()) + 1)
+                $(".like-num").text(likeNum)
+                $("#topicLike").css("display", "inline-block")
+                // $("#likeTag").prepend(html)
+                $("#likeTag").attr("like-status", "1")
+                $(".dianzan_topic .like-btn-show").css("color", "#ccc")
+                let url = 'http://www.mamawozaizhe.com/yz/mobile2/jielong/zanAjax'
+                let likeArr = {
+                    "comid": topicId,
+                    "act": "0"
+                }
+                root.sentLike(url, likeArr)
+            }
+        })
+    }
+
+    root.likeComment = likeComment
+    root.showZiForm = showZiForm
+    root.closeZiForm = closeZiForm
     root.likeTopic = likeTopic
     root.comMaxImg = comMaxImg
     // 上传图片删除 放大
