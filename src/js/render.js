@@ -21,6 +21,27 @@
     }
 
     // 渲染 上传图
+    // function renderComImg(url) {
+    //     let img_num = $("#imgInput").find(".img-input-item").length + 1
+    //     console.log(img_num)
+    //     let html =
+    //         `
+    //             <li class="img-input-item" img-id="${img_num}">
+    //                 <em class="delet" style="background-image:url(/public/yz/jl_img/deletimg.png)"></em>
+    //                 <div class="img-con" style="background-image:url(${url})"></div>
+    //                 <div class="img-max-box">
+    //                     <img class="show-max" src="${url}">
+    //                 </div>
+    //             </li>
+    //         `
+    //     $("#imgInput").append(html)
+    //     // 删除
+    //     root.deletImg()
+    //     // 放大
+    //     root.maxImg()
+    //     // 判断图片数量
+    //     root.showUpload()
+    // }
     function renderComImg(url) {
         let img_num = $("#imgInput").find(".img-input-item").length + 1
         console.log(img_num)
@@ -28,7 +49,7 @@
             `
                 <li class="img-input-item" img-id="${img_num}">
                     <em class="delet" style="background-image:url(/public/yz/jl_img/deletimg.png)"></em>
-                    <div class="img-con" style="background-image:url(${url})"></div>
+                    <input class="img-con" name="imgUpload[]" value= "${url}" style="background-image:url(${url})">
                     <div class="img-max-box">
                         <img class="show-max" src="${url}">
                     </div>

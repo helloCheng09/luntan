@@ -487,6 +487,11 @@
   background-size: cover;
   background-position: 50%;
 }
+#tDetWrap .comment-list #subForm_1 ul .img-input-item .img-con {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
 #tDetWrap .comment-list #subForm_1 ul .img-input-item .img-max-box {
   position: fixed;
   top: 0;
