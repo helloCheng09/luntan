@@ -112,11 +112,34 @@
         })
     }
 
+    
+    // 回复子评论
+
+    let showComForm = () => {
+        $(".zi-com-item").each(function(){
+            let thisEle = $(this)
+            thisEle.find(".com-text").on("click", function () {
+                let comId =thisEle.attr("data-id")
+                console.log(comId)
+               
+                let auth =thisEle.find(".nick").text()
+                console.log(auth)
+                let text = "回复 " + auth + " 内容"
+                $("#subForm_1").find("textarea").attr("placeholder", text)
+                $("#subForm_1").show()
+                $("#reCommenId").val(comId) 
+                console.log( $("#reCommenId").val())
+                root.closeZiForm()
+            })
+        })
+    }
 
     // 关闭子评论回复框
     let closeZiForm = () => {
         $(".blank-close").on("click", () => {
             $("#subForm_2").hide()
+            $("#subForm_1").hide()
+            console.log("关闭表单")
         })
     }
 
@@ -146,6 +169,7 @@
         })
     }
 
+    root.showComForm = showComForm
     root.likeComment = likeComment
     root.showZiForm = showZiForm
     root.closeZiForm = closeZiForm

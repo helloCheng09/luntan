@@ -29,11 +29,11 @@
 
     // 图片传给后台 
     // 获取后台图片地址
-    function pushImg(formData) {
+    function pushImg(url, dataArr) {
         $.ajax({
-            url: 'http://www.mamawozaizhe.com/yz/mobile2/jielong/do_upload',
+            url: url,
             type: 'POST',
-            data: formData,
+            data: dataArr,
             contentType: false,
             processData: false,
             dataType: 'JSON',
@@ -42,7 +42,7 @@
     }
 
     function getPicUrl(data) {
-        data = JSON.parse(data)
+        // data = JSON.parse(data)
         console.log(data)
         let curDay = getNowFormatDate()
         console.log(curDay)
@@ -64,7 +64,7 @@
         if (strDate >= 0 && strDate <= 9) {
             strDate = "0" + strDate;
         }
-        var currentdate = String(date.getFullYear()) + String(month) + String(strDate) ;
+        var currentdate = String(date.getFullYear()) + String(month) + String(strDate);
         return currentdate;
     }
 
@@ -92,5 +92,6 @@
         console.log(data)
         console.log(status)
     }
+
 
 }(window.Zepto, window.topic || (window.topic = {})))

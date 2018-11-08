@@ -133,26 +133,39 @@ if ($("#fqWrap").length) {
     })
 
     let urlSelf
+    let file
     // 上传图片
     $('#file').on('change', function (e) {
-        var file = this.files[0]
-        var formData = new FormData();
-        // formData.append('userfile', file);
-        formData.append('userfile', file);
+   
+        let type = root.phoneType()
+        if (type !== "ios") {
+            var file = this.files[0]
+            let formData = new FormData();
+            // formData.append('userfile', file);
+            formData.append('userfile', file);
+            console.log("bushipingguo ")
+            // 获取图片本地base64
+            let reads = new FileReader();
+            let f = document.getElementById('file').files[0];
+            reads.readAsDataURL(f);
+            reads.onload = function (e) {
+                urlSelf = this.result
+                root.urlSelf = urlSelf
+                root.pushImg(formData)
+            }
+        } else {
+            var file = this.files[0]
+            console.log(file)
+            let formData = new FormData();
+            formData.append('userfile', file);
+            root.roateImgIos(this, formData)
+            // *******************************************
+            // root.roateImgIos(this)
+        }
+    })
 
-        // 获取图片本地base64
-        let reads = new FileReader();
-        let f = document.getElementById('file').files[0];
-        reads.readAsDataURL(f);
-        reads.onload = function (e) {
-            urlSelf = this.result
-            console.log(urlSelf)
-            root.urlSelf = urlSelf
-            console.log(formData)
-            root.pushImg(formData)
-        };
 
-    });
+
 
     // 最大化评论图片
     root.comMaxImg()
@@ -178,9 +191,9 @@ if ($("#fqWrap").length) {
     })
 
     // 初始化 当前用户对评论的点赞情况
-    root.initComLike ()
-
-    root.showZiForm ()
-    root.likeComment ()
+    root.initComLike()
+    root.showComForm ()
+    root.showZiForm()
+    root.likeComment()
 
 }
