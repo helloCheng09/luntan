@@ -8,7 +8,6 @@
                 console.log("删除图片")
                 // 超过4张不显示
                 root.showUpload()
-
             })
         })
     }
@@ -36,7 +35,7 @@
     function clickLike() {
         $(".com-item").each(function () {
             let comId = $(this).attr("data-id")
-            console.log("topicId:" + comId)
+            // console.log("topicId:" + comId)
             $(this).find(".com-like").on("click", function () {
                 let islike = $(this).attr("like-status")
                 if (islike == 0) {
@@ -116,13 +115,13 @@
     // 回复子评论
 
     let showComForm = () => {
-        $(".zi-com-item").each(function(){
+        $(".coment_b").each(function(){
             let thisEle = $(this)
-            thisEle.find(".com-text").on("click", function () {
+            thisEle.find(".comment-p .com-text").on("click", function () {
                 let comId =thisEle.attr("data-id")
                 console.log(comId)
                
-                let auth =thisEle.find(".nick").text()
+                let auth =thisEle.find(".comment-p .nick").text()
                 console.log(auth)
                 let text = "回复 " + auth + " 内容"
                 $("#subForm_1").find("textarea").attr("placeholder", text)

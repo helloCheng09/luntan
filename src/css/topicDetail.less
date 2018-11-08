@@ -436,7 +436,6 @@
             .fasong-btn {
                 display: inline-block;
                 width: 100%;
-                margin-top: 50px;
                 text-align: right;
             }
             #submitBtn {
@@ -479,42 +478,58 @@
                 height: 255px;
             }
             .img-input-box {
-                margin: 0 10px 20px;
+                margin: 0 10px 4px;
             }
             ul {
                 display: flex;
                 font-size: 0;
                 margin-left: -2.5px;
                 li {
-                    margin-top: 10px;
+                    // margin-top: 10px;
                 }
+                @item_w: calc(~'25% - 7px'); // @r_w: @item_w - 20px;
                 .img-input-item {
                     position: relative;
+                    overflow: hidden;
+                    width: 25%;
+                    height: 0;
+                    padding-bottom: 25%; // margin: 10px 5px 0;
                     .delet {
                         position: absolute;
                         right: 2px;
                         top: 0px;
                         z-index: 999;
                         display: inline-block;
-                        width: 20px;
-                        height: 20px;
+                        width: 28px;
+                        height: 28px;
                         border-radius: 50%;
                         background-size: cover;
                         background-position: 50%;
                         background-color: #fff;
                     }
                     .img-con {
+                        position: absolute;
                         display: inline-block;
-                        width: 80px;
-                        height: 80px;
-                        margin: 0 5px;
-                        background-size: cover;
-                        background-position: 50%;
+                        width: 100%;
+                        height: 100%;
+                        padding: 5px;
                     }
                     .img-con {
                         border: none;
                         outline: none;
                         -webkit-appearance: none;
+                    }
+                    .mini-b{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        margin: 5px;
+                    }
+                    .img-mini {
+                        // position: relative;
+                        display: inline-block;
+                        // width: 100%;
+                        // height: 100%;
                     }
                     .img-max-box {
                         position: fixed;
@@ -536,10 +551,13 @@
                     }
                 }
                 .add-input-img {
-                    display: inline-block;
-                    width: 80px;
-                    height: 80px;
-                    margin: 10px 5px 0;
+                    display: inline-block; // width: 80px;
+                    // height: 80px;
+                    width: @item_w;
+                    height: 0;
+                    margin-top: 5px;
+                    margin-left: 5px;
+                    padding-bottom: @item_w; // margin: 10px 5px 0;
                     background-size: cover;
                     background-position: 50%;
                     border: 1px dashed #ddd;

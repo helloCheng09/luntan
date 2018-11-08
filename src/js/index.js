@@ -135,34 +135,34 @@ if ($("#fqWrap").length) {
     let urlSelf
     let file
     // 上传图片
-    $('#file').on('change', function (e) {
+    // $('#file').on('change', function (e) {
    
-        let type = root.phoneType()
-        if (type !== "ios") {
-            var file = this.files[0]
-            let formData = new FormData();
-            // formData.append('userfile', file);
-            formData.append('userfile', file);
-            console.log("bushipingguo ")
-            // 获取图片本地base64
-            let reads = new FileReader();
-            let f = document.getElementById('file').files[0];
-            reads.readAsDataURL(f);
-            reads.onload = function (e) {
-                urlSelf = this.result
-                root.urlSelf = urlSelf
-                root.pushImg(formData)
-            }
-        } else {
-            var file = this.files[0]
-            console.log(file)
-            let formData = new FormData();
-            formData.append('userfile', file);
-            root.roateImgIos(this, formData)
-            // *******************************************
-            // root.roateImgIos(this)
-        }
-    })
+    //     let type = root.phoneType()
+    //     if (type !== "ios") {
+    //         var file = this.files[0]
+    //         let formData = new FormData();
+    //         // formData.append('userfile', file);
+    //         formData.append('userfile', file);
+    //         console.log("bushipingguo ")
+    //         // 获取图片本地base64
+    //         let reads = new FileReader();
+    //         let f = document.getElementById('file').files[0];
+    //         reads.readAsDataURL(f);
+    //         reads.onload = function (e) {
+    //             urlSelf = this.result
+    //             root.urlSelf = urlSelf
+    //             root.pushImg(formData)
+    //         }
+    //     } else {
+    //         var file = this.files[0]
+    //         console.log(file)
+    //         let formData = new FormData();
+    //         formData.append('userfile', file);
+    //         root.roateImgIos(this, formData)
+    //         // *******************************************
+    //         // root.roateImgIos(this)
+    //     }
+    // })
 
 
 

@@ -428,7 +428,6 @@
 #tDetWrap .comment-list #subForm_1 .fasong-btn {
   display: inline-block;
   width: 100%;
-  margin-top: 50px;
   text-align: right;
 }
 #tDetWrap .comment-list #subForm_2 #submitBtn,
@@ -472,18 +471,19 @@
   height: 255px;
 }
 #tDetWrap .comment-list #subForm_1 .img-input-box {
-  margin: 0 10px 20px;
+  margin: 0 10px 4px;
 }
 #tDetWrap .comment-list #subForm_1 ul {
   display: flex;
   font-size: 0;
   margin-left: -2.5px;
 }
-#tDetWrap .comment-list #subForm_1 ul li {
-  margin-top: 10px;
-}
 #tDetWrap .comment-list #subForm_1 ul .img-input-item {
   position: relative;
+  overflow: hidden;
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
 }
 #tDetWrap .comment-list #subForm_1 ul .img-input-item .delet {
   position: absolute;
@@ -491,25 +491,33 @@
   top: 0px;
   z-index: 999;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background-size: cover;
   background-position: 50%;
   background-color: #fff;
 }
 #tDetWrap .comment-list #subForm_1 ul .img-input-item .img-con {
+  position: absolute;
   display: inline-block;
-  width: 80px;
-  height: 80px;
-  margin: 0 5px;
-  background-size: cover;
-  background-position: 50%;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
 }
 #tDetWrap .comment-list #subForm_1 ul .img-input-item .img-con {
   border: none;
   outline: none;
   -webkit-appearance: none;
+}
+#tDetWrap .comment-list #subForm_1 ul .img-input-item .mini-b {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+}
+#tDetWrap .comment-list #subForm_1 ul .img-input-item .img-mini {
+  display: inline-block;
 }
 #tDetWrap .comment-list #subForm_1 ul .img-input-item .img-max-box {
   position: fixed;
@@ -531,9 +539,11 @@
 }
 #tDetWrap .comment-list #subForm_1 ul .add-input-img {
   display: inline-block;
-  width: 80px;
-  height: 80px;
-  margin: 10px 5px 0;
+  width: calc(25% - 7px);
+  height: 0;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding-bottom: calc(25% - 7px);
   background-size: cover;
   background-position: 50%;
   border: 1px dashed #ddd;
