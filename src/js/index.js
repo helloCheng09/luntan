@@ -24,6 +24,15 @@ if ($("#fqWrap").length) {
     root.multiSelect($(".teacher-item"), "selected")
     root.selectAllBtn($("#selAll"), "btn_selected")
     root.singleSel($(".student-item"), "selected")
+
+    console.log("11")
+    // 提交表单
+    $("#fabuSubmit").on("touchstart", function () {
+        $(".fabu-form").submit(function () {
+            $("#fabuSubmit").attr("type", "button")
+        })
+    })
+
 } else if ($("#tListWra").length) {
     /**
      * 接龙话题列表 入口
@@ -163,17 +172,23 @@ if ($("#fqWrap").length) {
     // 点赞话题
     root.likeTopic()
 
-    // topickDetail防重复提交
-    var issubmit = false
-
-    function doSubmit() {
-        if (issubmit == false) {
-            issubmit = true;
-            return true;
-        } else {
-            return false;
-        }
-    }
+    console.log("444")
+    // 提交表单
+    $("#submitBtn").on("touchstart", function () {
+        $("form").submit(function () {
+            $("#submitBtn").attr("type", "button")
+        })
+    })
+    
+    // var issubmit = false
+    // function doSubmit() {
+    //     if (issubmit == false) {
+    //         issubmit = true;
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
 
 } else if (document.getElementById("comDetWrap")) {
@@ -186,7 +201,7 @@ if ($("#fqWrap").length) {
     root.showZiForm()
     root.likeComment()
     // 最大化主评论图片
-    root.maxComTop ()
+    root.maxComTop()
     // root.preImage(".comment-img-box", ".comment-img-box .show-img")
 
 }
