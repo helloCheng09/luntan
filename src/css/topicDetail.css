@@ -218,6 +218,25 @@
   flex-wrap: wrap;
   position: relative;
 }
+#tDetWrap .comment-list .com-main .com-item .right-detail .max-img-swiper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: #000;
+}
+#tDetWrap .comment-list .com-main .com-item .right-detail .max-img-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#tDetWrap .comment-list .com-main .com-item .right-detail .max-img-swiper .topic-img-max {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
 #tDetWrap .comment-list .com-main .com-item .right-detail .img-conten {
   position: relative;
   height: 0;
@@ -253,6 +272,7 @@
   background-repeat: no-repeat;
 }
 #tDetWrap .comment-list .com-main .com-item .right-detail .com-text {
+  word-break: break-all;
   margin-bottom: 4px;
   font-size: 1.4rem;
   line-height: 1.5;
@@ -487,7 +507,7 @@
 }
 #tDetWrap .comment-list #subForm_1 ul .img-input-item .delet {
   position: absolute;
-  right: 2px;
+  right: 0px;
   top: 0px;
   z-index: 999;
   display: inline-block;
@@ -567,6 +587,10 @@
   width: 50%;
   margin: 10px 0;
   text-align: center;
+}
+#tDetWrap .comment-list .com-topic .com-this-topic,
+#tDetWrap .comment-list .com-topic .like-btn-show {
+  font-size: 16px;
 }
 #tDetWrap .like-list .like-item {
   display: flex;

@@ -189,7 +189,7 @@
   line-height: 1.3;
 }
 #comDetWrap .com-item .com-link {
-  font-size: 13px;
+  font-size: 15px;
   color: #3c6e9e;
 }
 #comDetWrap .com-item .img-list {
@@ -210,18 +210,20 @@
   width: 100%;
   height: 100%;
 }
-#comDetWrap .com-item .main-max-list .main-img-max {
+#comDetWrap .com-item .main-max-list .swiper-wrapper {
   width: 100%;
   height: 100%;
+}
+#comDetWrap .com-item .main-max-list .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #000;
 }
-#comDetWrap .com-item .main-max-list .show-img {
-  background-size: 100vw auto;
-  background-repeat: no-repeat;
-  background-position: 50%;
+#comDetWrap .com-item .main-max-list img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
 }
 #comDetWrap .com-item .img-conten {
   position: relative;
@@ -250,13 +252,15 @@
   padding-top: 10px;
   padding-bottom: 6px;
   margin: 0 10px;
-  border-bottom: 1px solid #ddd;
 }
 #comDetWrap .zi-com-list .comment-p {
   display: flex;
 }
 #comDetWrap .zi-com-list .zi-comment-l .zi-com-item {
   display: flex;
+}
+#comDetWrap .zi-com-list .zi-comment-l .zi-com-item:last-of-type .right-detai::after {
+  border: none;
 }
 #comDetWrap .zi-com-list .zi_item {
   margin: 0;
@@ -266,6 +270,9 @@
 }
 #comDetWrap .zi-com-list .right-detail .nick-box {
   margin-bottom: 6px;
+}
+#comDetWrap .zi-com-list .zi-com-item::after {
+  border-color: #ddd;
 }
 #comDetWrap .zi-com-list .nick {
   font-size: 1.4rem;
@@ -323,6 +330,10 @@
   width: 50%;
   margin: 10px 0;
   text-align: center;
+}
+#comDetWrap .com-topic .com-this-topic,
+#comDetWrap .com-topic .like-btn-show {
+  font-size: 16px;
 }
 #comDetWrap #subForm_2,
 #comDetWrap #subForm_1 {

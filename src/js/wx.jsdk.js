@@ -68,8 +68,8 @@
           sum = images.localId.length;
           /*相应位置预览*/
           var count = res.localIds.length + upsum;
-
-          for (j = upsum; j < count; j++) {
+          let j
+          for ( j = upsum; j < count; j++) {
             insertImg(res.localIds[j - upsum])
           }
 
@@ -79,21 +79,26 @@
           upsum = upsum + sum;
           /*上传图片到微信服务器*/
           var i = 0;
-          len = images.localId.length;
+          let len = images.localId.length;
           wxupload();
 
           function wxupload() {
             wx.uploadImage({
               localId: images.localId[i], // 需要上传的图片的本地ID，由chooseImage接口获得
-              //isShowProgressTips: 1, // 默认为1，显示进度提示
+              isShowProgressTips: 4, // 默认为1，显示进度提示
               success: function (res) {
                 i++;
-                //将上传成功后的serverId保存到serverid  
+                //将上传成功后的serverId保存到serverid 
+                // alert('已上传：' + i + '/' + len);
                 images.serverId.push(res.serverId);
+                insertValue(res.serverId);
                 if (i < len) {
                   wxupload();
                 }
                 setImg()
+              },
+              fail: function (res) {
+                alert(JSON.stringify(res));
               }
             });
           }
@@ -108,22 +113,23 @@
     alert(res.errMsg);
   });
 
+  function insertValue(value) {
+    $('#imgInput').prepend("<input type='hidden' name='img_value[]' value='" + value + "' >");
+  }
   //  插入小图
   let insertImg = (img_src) => {
-    // <div class="img-con" style="background-image:url(${img_src})"></div>
-    // <img class="img-mini" src="${img_src}" id="portrait1_src">  
     var html = `
         <li class="img-input-item" style="opcity:0;" img-id="">
           <em class="delet" style="background-image:url(/public/yz/jl_img/deletimg.png)"></em>
           <div class="mini-b">
             <img class="img-mini" src="${img_src}" id="portrait1_src"> 
           </div>
-          <input name="imgUpload[]" style=" display:none;" value="${img_src}">
         </li>
      `
     $('#imgInput').prepend(html);
     $(".img-mini").unbind()
-    preImage()
+    // preImage()
+    preImage(".img-input-item", ".img-input-item .img-mini")
   }
 
   /* 判断图片比例 *
@@ -151,15 +157,34 @@
 
   // 预览大图
   // 5.2 图片预览
-  let preImage = () => {
-    $(".img-input-item .img-mini").on("click", function () {
+  /**
+   * @param {".img-input-item"} imgBox 
+   * @param {".img-input-item .img-mini"} imgEle 
+   */
+  let preImage = (imgBox, img) => {
+    $(img).on("click", function () {
       let urls = []
-      let curUrl = $(this).attr("src")
-      // 获取所有预览图片地址
-      $(".img-input-item").each(function () {
-        let imgEle = $(this).find(".img-mini")
-        urls.push(imgEle.attr("src"))
-      })
+      let curUrl
+      // 如果展示是img标签
+      if ($(img).attr("src")) {
+        curUrl = $(this).attr("src")
+        // 获取所有预览图片地址
+        $(imgBox).each(function () {
+          let imgEle = $(this).find(img)
+          urls.push(imgEle.attr("src"))
+        })
+      } else if ($(img).css("backgroundImage")) {
+        // 如果是背景展示
+        let url = $(img).css("backgroundImage")
+        curUrl = toSrc(url)
+        $(imgBox).each(function () {
+          let imgEle = $(this).find(img)
+          let itemSrc = toSrc(imgEle.css("backgroundImage"))
+          urls.push(itemSrc)
+        })
+      } else {
+        alert("无法浏览大图！")
+      }
       wx.previewImage({
         current: curUrl,
         urls: urls
@@ -167,4 +192,30 @@
     })
   }
 
+  // let preListImg = () => {
+  //   $(".comment-img-box").on("click", function () {
+  //     let imgB = $(this)
+  //     let url = (imgB.find(".show-img")).css("backgroundImage")
+  //     let curUrl = toSrc(url)
+  //     console.log(curUrl)
+  //     let urls = []
+  //     let imgP = imgB.parent(".img-list")
+  //     imgP.find(".comment-img-box").each(function () {
+  //       urls.push(toSrc($(this).find(".show-img").css("backgroundImage")))
+  //       console.log(urls)
+  //     })
+  //     wx.previewImage({
+  //       current: curUrl,
+  //       urls: urls
+  //     })
+  //   })
+  // }
+
+  // // 处理 url 为 src
+  // let toSrc = (url) => {
+  //   return src = url.split('"')[1]
+  // }
+
+  // root.preListImg = preListImg
+  root.preImage = preImage
 }(window.Zepto, window.topic || (window.topic = {})))

@@ -111,23 +111,23 @@
         })
     }
 
-    
+
     // 回复子评论
 
     let showComForm = () => {
-        $(".coment_b").each(function(){
+        $(".coment_b").each(function () {
             let thisEle = $(this)
             thisEle.find(".comment-p .com-text").on("click", function () {
-                let comId =thisEle.attr("data-id")
+                let comId = thisEle.attr("data-id")
                 console.log(comId)
-               
-                let auth =thisEle.find(".comment-p .nick").text()
+
+                let auth = thisEle.find(".comment-p .nick").text()
                 console.log(auth)
                 let text = "回复 " + auth + " 内容"
                 $("#subForm_1").find("textarea").attr("placeholder", text)
                 $("#subForm_1").show()
-                $("#reCommenId").val(comId) 
-                console.log( $("#reCommenId").val())
+                $("#reCommenId").val(comId)
+                console.log($("#reCommenId").val())
                 root.closeZiForm()
             })
         })
@@ -148,9 +148,6 @@
             let topicId = $(".right-container").attr("topic-id")
             console.log(topicId)
             if ($("#likeTag").attr("like-status") == 0) {
-                // let html = `
-                //     <img src="https://ww4.sinaimg.cn/orj480/0062Mr4Vjw8epo890ks01j30f00f00tt.jpg" alt="" class="liked-avatar">
-                // `
                 $("#likeTag").removeClass("nozan").addClass("addlike")
                 let likeNum = (Number($(".like-num").text()) + 1)
                 $(".like-num").text(likeNum)
@@ -161,13 +158,108 @@
                 let url = 'http://www.mamawozaizhe.com/yz/mobile2/jielong/zanAjax'
                 let likeArr = {
                     "comid": topicId,
-                    "act": "0"
+                    "act": "1   "
                 }
                 root.sentLike(url, likeArr)
             }
         })
     }
 
+    // 最大化topic图片
+    let maxTopImg = () => {
+        $(".topic-contain p img").on("click", function () {
+            let index = $(this).index()
+            let myMaxImg = new Swiper('#showPanel', {
+                initialSlide: index,
+            })
+            $(".main-max-list").css("display", "block").on("click", function () {
+                myMaxImg.destroy(false)
+                $(this).css("display", "none")
+            })
+        })
+    }
+
+    // 最大化评论图片
+
+    // let preListImg = () => {
+    //     $(".comment-img-box").on("click", function () {
+    //         let imgB = $(this)
+
+    //         $("#showTopPanel").css("display", "flex")
+    //         let myMaxTop = new Swiper('#showTopPanel', {
+    //             initialSlide: index
+    //         })
+    //         root.closePreList()
+    //     })
+    // }
+    let preListImg = () => {
+        $(".comment-img-box").on("click", function () {
+            let imgB = $(this)
+            let url = (imgB.find(".show-img")).css("backgroundImage")
+            let curUrl = toSrc(url)
+            console.log(curUrl)
+            let index
+            let urls = []
+            let imgP = imgB.parent(".img-list")
+            imgP.find(".comment-img-box").each(function () {
+                urls.push(toSrc($(this).find(".show-img").css("backgroundImage")))
+            })
+            // 动态出入所有图片
+            $("#showTopPanel .swiper-wrapper").empty()
+            $.each(urls, function (index2, item) {
+                if (item == curUrl) {
+                    index = index2
+                }
+                console.log(item)
+                var html = `
+                    <div class="swiper-slide">
+                        <img class="topic-img-max" src="${item}">
+                    </div>
+                 `
+                $("#showTopPanel .swiper-wrapper").append(html)
+            })
+            // console.log("第几张：" + index)
+            $("#showTopPanel").css("display", "flex")
+            let myMaxTop = new Swiper('#showTopPanel', {
+                initialSlide: index
+            })
+            root.closePreList(myMaxTop)
+        })
+    }
+    // 处理 url 为 src
+    let toSrc = (url) => {
+        return src = url.split('"')[1]
+    }
+
+    // 关闭最大图
+    let closePreList = (myMaxTop) => {
+        $(".swiper-slide").on("click", function () {
+            myMaxTop.destroy(false)
+            $("#showTopPanel").css("display", "none")
+        })
+        console.log('管')
+    }
+
+    // 话题详情最大化图片
+    let maxComTop = () => {
+        $(".comment-img-box").on("click", function () {
+            let index = $(this).index()
+            $(".main-max-list").css("display", "block")
+            let myMaxImg = new Swiper('#showPanel', {
+                initialSlide: index,
+            })
+            $(".main-max-list").on("click", function () {
+                myMaxImg.destroy(false)
+                $(this).css("display", "none")
+            })
+        })
+    }
+
+    // root.doSubmit = doSubmit
+    root.maxComTop = maxComTop
+    root.closePreList = closePreList
+    root.preListImg = preListImg
+    root.maxTopImg = maxTopImg
     root.showComForm = showComForm
     root.likeComment = likeComment
     root.showZiForm = showZiForm

@@ -9,12 +9,12 @@ let root = window.topic
 
 if ($("#fqWrap").length) {
 
-    $scope.on("click", "#fabuSubmit", function () {
-        layer.alert('发布失败，请完善接龙信息！', {
-            skin: 'layui-layer-blue',
-            closeBtn: 0
-        });
-    })
+    // $scope.on("click", "#fabuSubmit", function () {
+    //     layer.alert('发布失败，请完善接龙信息！', {
+    //         skin: 'layui-layer-blue',
+    //         closeBtn: 0
+    //     });
+    // })
 
     // 文本框自适应
     let textaraeEle = document.getElementsByTagName("textarea")
@@ -117,26 +117,18 @@ if ($("#fqWrap").length) {
     })
 
     // 文本框自适应
-    let textaraeEle = document.getElementsByTagName("textarea")
-    root.autoTextarea(textaraeEle[0])
+    // let textaraeEle = document.getElementsByTagName("textarea")
+    // root.autoTextarea(textaraeEle[0])
 
     // 实例化图片放大轮播
     root.getImgSrc()
-    $(".topic-contain p img").on("click", function () {
-        let index = $(this).index()
-        $(".main-max-list").css("display", "block").on("click", function () {
-            $(this).css("display", "none")
-        })
-        let myMaxImg = new Swiper('#showPanel', {
-            initialSlide: index,
-        })
-    })
+    root.maxTopImg()
 
     let urlSelf
     let file
     // 上传图片
     // $('#file').on('change', function (e) {
-   
+
     //     let type = root.phoneType()
     //     if (type !== "ios") {
     //         var file = this.files[0]
@@ -164,36 +156,37 @@ if ($("#fqWrap").length) {
     //     }
     // })
 
-
-
-
     // 最大化评论图片
-    root.comMaxImg()
+    root.preListImg()
+    // root.comMaxImg()
+    // root.preImage(".coment_b .comment-img-box", ".coment_b  .show-img" )
     // 点赞话题
     root.likeTopic()
 
+    // topickDetail防重复提交
+    var issubmit = false
+
+    function doSubmit() {
+        if (issubmit == false) {
+            issubmit = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 } else if (document.getElementById("comDetWrap")) {
     console.log("评论详情")
-
     // 实例化图片放大轮播
-    root.getDivSrc()
-    console.log("评论详情")
-    console.log("评论详情")
-    $(".comment-img-box").on("click", function () {
-        let index = $(this).index()
-        console.log(index)
-        $(".main-max-list").css("display", "block").on("click", function () {
-            $(this).css("display", "none")
-        })
-        let myMaxImg = new Swiper('#showPanel', {
-            initialSlide: index,
-        })
-    })
-
+    // root.getDivSrc()
     // 初始化 当前用户对评论的点赞情况
     root.initComLike()
-    root.showComForm ()
+    root.showComForm()
     root.showZiForm()
     root.likeComment()
+    // 最大化主评论图片
+    root.maxComTop ()
+    // root.preImage(".comment-img-box", ".comment-img-box .show-img")
 
 }
