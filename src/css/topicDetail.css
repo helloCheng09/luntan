@@ -200,6 +200,18 @@
   flex: 1;
   border-bottom: 1px solid #f7f7f7;
 }
+#tDetWrap .comment-list .com-main .com-item .right-detail .d-top-b {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#tDetWrap .comment-list .com-main .com-item .right-detail .d-top-b .delet-btn {
+  vertical-align: middle;
+}
+#tDetWrap .comment-list .com-main .com-item .right-detail .d-top-b .delet-text {
+  font-size: 16px;
+  color: red;
+}
 #tDetWrap .comment-list .com-main .com-item .right-detail .nick-box {
   margin-bottom: 5px;
 }
