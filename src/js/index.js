@@ -189,6 +189,9 @@ if ($("#fqWrap").length) {
     //         return false;
     //     }
     // }
+    
+    // 删除评论
+    root.deletCom ()
 
 
 } else if (document.getElementById("comDetWrap")) {

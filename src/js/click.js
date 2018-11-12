@@ -255,6 +255,33 @@
         })
     }
 
+    // 删除评论
+    let deletCom = () => {
+        $(".com-list .com-item").each(function () {
+            let ele = $(this)
+            $(this).find(".delet-bt").on("click", function () {
+
+                layer.confirm('是否要删除此评论？', {
+                    btn: ['确定', '取消'] //可以无限个按钮
+                        ,
+                    yes: function (index, layero) {
+                        //按钮【按钮一】的回调
+                        let comId = ele.attr("data-id")
+                        // 页面删除
+                        ele.remove()
+                        // 发送后台删除
+                        let url = "http://www.mamawozaizhe.com/yz/mobile2/jielong/deleteReply"
+                        root.sentAjaxDel(url, comId)
+                        layero.hide()
+                        $("#layui-layer-shade1").hide()
+                    }
+                });
+            })
+        })
+    }
+
+
+    root.deletCom = deletCom
     // root.doSubmit = doSubmit
     root.maxComTop = maxComTop
     root.closePreList = closePreList

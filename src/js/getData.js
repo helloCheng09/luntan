@@ -93,5 +93,27 @@
         console.log(status)
     }
 
+    let sentAjaxDel = (url, comId) => {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                reply_id: comId
+            },
+            beforeSend: function () {
+
+            },
+            success: function () {
+                layer.msg('删除成功！');
+            },
+            error: function () {
+                layer.msg('删除失败！');
+            }
+
+        })
+    }
+
+
+    root.sentAjaxDel = sentAjaxDel
 
 }(window.Zepto, window.topic || (window.topic = {})))
