@@ -274,7 +274,22 @@
         }
         .right-detail {
             flex: 1;
+            .d-top-b {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .delet-btn {
+                    width: 70px;
+                    text-align: right;
+                    vertical-align: middle;
+                }
+                .delet-text {
+                    font-size: 16px;
+                    color: red;
+                }
+            }
             .nick-box {
+                flex: 1;
                 margin-bottom: 6px;
             }
         }
@@ -289,7 +304,7 @@
         .zi-com-det {
             display: flex;
             line-height: 1.2;
-            font-size: 12px;
+            font-size: 14px;
             color: #a5aeb5;
             .student-parent {
                 max-width: 65%;

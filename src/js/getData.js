@@ -113,7 +113,29 @@
         })
     }
 
+    // 删除话题 发送后台
+    let sendDelet = (id) => {
+        let url = "http://www.mamawozaizhe.com/mobile2/jielong/deleteAjax"
+        console.log(url)
+        console.log(id)
+        $.ajax({
+            url: url,
+            data: {
+                "tid": id
+            },
+            type: "POST",
+            dataType: "JSON",
+            success: function (data) {
+                console.log(data)
+                layer.msg('删除成功！');
+            },
+            error: function () {
+                layer.msg('删除失败！');
+            }
+        })
+    }
 
+    root.sendDelet = sendDelet
     root.sentAjaxDel = sentAjaxDel
 
 }(window.Zepto, window.topic || (window.topic = {})))

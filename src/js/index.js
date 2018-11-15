@@ -37,7 +37,8 @@ if ($("#fqWrap").length) {
     /**
      * 接龙话题列表 入口
      */
-
+    // 删除话题
+    root.deletArticle()
     // let src = "../img/jielonglogo.png"
     let src = "/public/yz/jl_img/jielonglogo.png"
     root.renderImg(src)
@@ -206,5 +207,7 @@ if ($("#fqWrap").length) {
     // 最大化主评论图片
     root.maxComTop()
     // root.preImage(".comment-img-box", ".comment-img-box .show-img")
+    // 删除评论
+    root.deletCom ()
 
 }

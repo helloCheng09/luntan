@@ -88,7 +88,7 @@
                 // $("#likeTag").prepend(html)
                 $("#likeTag").attr("like-status", "1")
                 $(".like-btn-show").css("color", "#ccc")
-                let url = 'http://www.mamawozaizhe.com/yz/mobile2/jielong/zanAjax'
+                let url = 'http://www.mamawozaizhe.com/mobile2/jielong/zanAjax'
                 let likeArr = {
                     "comid": topicId,
                     "act": "0"
@@ -113,14 +113,12 @@
 
 
     // 回复子评论
-
     let showComForm = () => {
         $(".coment_b").each(function () {
             let thisEle = $(this)
             thisEle.find(".comment-p .com-text").on("click", function () {
                 let comId = thisEle.attr("data-id")
                 console.log(comId)
-
                 let auth = thisEle.find(".comment-p .nick").text()
                 console.log(auth)
                 let text = "回复 " + auth + " 内容"
@@ -155,7 +153,7 @@
                 // $("#likeTag").prepend(html)
                 $("#likeTag").attr("like-status", "1")
                 $(".dianzan_topic .like-btn-show").css("color", "#ccc")
-                let url = 'http://www.mamawozaizhe.com/yz/mobile2/jielong/zanAjax'
+                let url = 'http://www.mamawozaizhe.com/mobile2/jielong/zanAjax'
                 let likeArr = {
                     "comid": topicId,
                     "act": "1   "
@@ -260,7 +258,7 @@
         $(".com-list .com-item").each(function () {
             let ele = $(this)
             $(this).find(".delet-bt").on("click", function () {
-
+                console.log(12330)
                 layer.confirm('是否要删除此评论？', {
                     btn: ['确定', '取消'] //可以无限个按钮
                         ,
@@ -270,17 +268,65 @@
                         // 页面删除
                         ele.remove()
                         // 发送后台删除
-                        let url = "http://www.mamawozaizhe.com/yz/mobile2/jielong/deleteReply"
+                        let url = "http://www.mamawozaizhe.com/mobile2/jielong/deleteReply"
                         root.sentAjaxDel(url, comId)
                         layero.hide()
                         $("#layui-layer-shade1").hide()
+                        // window.location.reload()
                     }
                 });
             })
         })
+        $(".zi-com-list .zi-com-item").each(function () {
+            let ele = $(this)
+            $(this).find(".delet-bt").on("click", function () {
+                console.log(12330)
+                layer.confirm('是否要删除此评论？', {
+                    btn: ['确定', '取消'] //可以无限个按钮
+                        ,
+                    yes: function (index, layero) {
+                        //按钮【按钮一】的回调
+                        let comId = ele.attr("data-id")
+                        // 页面删除
+                        ele.remove()
+                        // 发送后台删除
+                        let url = "http://www.mamawozaizhe.com/mobile2/jielong/deleteReply"
+                        root.sentAjaxDel(url, comId)
+                        layero.hide()
+                        $("#layui-layer-shade1").hide()
+                        // window.location.reload()
+                    }
+                });
+            })
+        })
+
+    }
+
+    // 删除文章
+    let deletArticle = () => {
+        // 取对应的topic-id 发后台
+        $(".delet-bar").unbind()
+        $(".delet-bar").on("click", function (e) {
+
+            let ele = $(this).parent(".topic-item").parent(".topic-item-b")
+            layer.confirm('确定删除文章吗？', {
+                btn: ['确定', '取消'] //可以无限个按钮
+                    ,
+                closeBtn: 1,
+                yes: function (index, layero) {
+                    console.log($(this))
+                    let topicId = ele.attr("data-id")
+                    root.sendDelet(topicId)
+                    ele.remove()
+                    layer.close(index);
+                }
+            });
+
+        })
     }
 
 
+    root.deletArticle = deletArticle
     root.deletCom = deletCom
     // root.doSubmit = doSubmit
     root.maxComTop = maxComTop

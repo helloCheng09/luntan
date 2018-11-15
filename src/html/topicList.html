@@ -4,7 +4,7 @@
 <head>
     <title>接龙列表</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/topicList.css">
     <link rel="stylesheet" href="../js/layui/css/layui.mobile.css">
@@ -31,35 +31,78 @@
         <!-- 搜索接龙 -->
         <div class="main-show">
             <ul class="topic-list">
-                <li class="topic-item" data-id="1">
-                    <a href="./topicDetail.html" class="detail-link">
-                        <div class="topic-show-item">
-                            <span class="icon-show">新</span>
-                            <span class="titile one-ellipsis">接龙标题标题标题接龙标题标题标题接龙标题标题标题接龙标题标题标题</span>
+                <li class="topic-item-b" data-id="1">
+                    <div class="topic-item">
+                        <a href="./topicDetail.html" class="detail-link">
+                            <div class="topic-show-item">
+                                <span class="icon-show">新</span>
+                                <span class="titile one-ellipsis">接龙标题标题标题接龙标题标题标题接龙标题标题标题接龙标题标题标题</span>
+                            </div>
+                            <div class="topic-des three-ellipsis">
+                                接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容
+                            </div>
+                            <div class="topic-item-bot">
+                                <span class="t-author">发起人：<em class="pre-icon">校</em>校长</span>
+                                <span class="t-time">时间：2018-10-10</span>
+                            </div>
+                            <div class="com-like-num">
+                                <!-- 评论 -->
+                                <span class="com-num"><img class="com-img" src="../img/pinglun.png"><em class="com-text">666</em></span>
+                                <!-- 点赞 -->
+                                <span class="com-like"><em class="like-img" style="background-image: url(../img/likes.png);"></em><em
+                                        class="like-text">999</em></span>
+                            </div>
+                        </a>
+                        <div class="delet-bar">
+                            <div class="delet-text">
+                                删除
+                            </div>
                         </div>
-                        <div class="topic-des three-ellipsis">
-                            接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容
+                    </div>
+                </li>
+                <li class="topic-item-b" data-id="1">
+                    <div class="topic-item">
+                        <a href="./topicDetail.html" class="detail-link">
+                            <div class="topic-show-item">
+                                <span class="icon-show">新</span>
+                                <span class="titile one-ellipsis">接龙标题标题标题接龙标题标题标题接龙标题标题标题接龙标题标题标题</span>
+                            </div>
+                            <div class="topic-des three-ellipsis">
+                                接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容接龙内容
+                            </div>
+                            <div class="topic-item-bot">
+                                <span class="t-author">发起人：<em class="pre-icon">校</em>校长</span>
+                                <span class="t-time">时间：2018-10-10</span>
+                            </div>
+                            <div class="com-like-num">
+                                <!-- 评论 -->
+                                <span class="com-num"><img class="com-img" src="../img/pinglun.png"><em class="com-text">666</em></span>
+                                <!-- 点赞 -->
+                                <span class="com-like"><em class="like-img" style="background-image: url(../img/likes.png);"></em><em
+                                        class="like-text">999</em></span>
+                            </div>
+                        </a>
+                        <div class="delet-bar">
+                            <div class="delet-text">
+                                删除
+                            </div>
                         </div>
-                        <div class="topic-item-bot">
-                            <span class="t-author">发起人：<em class="pre-icon">校</em>校长</span>
-                            <span class="t-time">时间：2018-10-10</span>
-                        </div>
-                        <div class="com-like-num">
-                            <!-- 评论 -->
-                            <span class="com-num"><img class="com-img" src="../img/pinglun.png"><em class="com-text">666</em></span>
-                            <!-- 点赞 -->
-                            <span class="com-like"><em class="like-img"  style="background-image: url(../img/likes.png);"></em><em class="like-text">999</em></span>
-                        </div>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </div>
+        <div class="fb-link">
+            <a href="###" class="link-to-fb">
+                <img src="../img/tjbtn.png" alt="">
+                <!-- <div class="bg-btn" style="background-image:url(../img/tjbtn.png)"></div> -->
+            </a>
+        </div>
     </div>
-    <!-- 主入口js -->
+
     <script src="../js/gaussBlur.js" type="text/javascript"></script>
-    <!-- 主入口js -->
+    <script src="../js/getData.js" type="text/javascript"></script>
+    <script src="../js/click.js" type="text/javascript"></script>
     <script src="../js/render.js" type="text/javascript"></script>
-    <!-- 主入口js -->
     <script src="../js/index.js" type="text/javascript"></script>
 </body>
 

@@ -268,7 +268,22 @@
 #comDetWrap .zi-com-list .right-detail {
   flex: 1;
 }
+#comDetWrap .zi-com-list .right-detail .d-top-b {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#comDetWrap .zi-com-list .right-detail .d-top-b .delet-btn {
+  width: 70px;
+  text-align: right;
+  vertical-align: middle;
+}
+#comDetWrap .zi-com-list .right-detail .d-top-b .delet-text {
+  font-size: 16px;
+  color: red;
+}
 #comDetWrap .zi-com-list .right-detail .nick-box {
+  flex: 1;
   margin-bottom: 6px;
 }
 #comDetWrap .zi-com-list .zi-com-item::after {
@@ -282,7 +297,7 @@
 #comDetWrap .zi-com-list .zi-com-det {
   display: flex;
   line-height: 1.2;
-  font-size: 12px;
+  font-size: 14px;
   color: #a5aeb5;
 }
 #comDetWrap .zi-com-list .zi-com-det .student-parent {

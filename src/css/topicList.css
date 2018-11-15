@@ -1,5 +1,6 @@
 @import "mReset.css";
 #tListWra {
+  position: relative;
   min-height: 100vh;
   padding-bottom: 10px;
   background-color: #f7f7f7;
@@ -57,15 +58,37 @@
   margin-top: 10px;
   font-size: 0;
 }
-#tListWra .main-show .topic-list .topic-item {
-  padding: 12px 8px 4px;
+#tListWra .main-show .topic-list .topic-item-b {
+  overflow: hidden;
+  height: 144px;
   border-bottom: 1px solid #e0e0e0;
+}
+#tListWra .main-show .topic-list .topic-item {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 20px;
   background-color: #fff;
 }
+#tListWra .main-show .topic-list .delet-bar {
+  line-height: 144px;
+}
+#tListWra .main-show .topic-list .delet-bar .delet-text {
+  width: 80px;
+  line-height: 144px;
+  font-size: 16px;
+  text-align: center;
+  height: 100%;
+  background-color: red;
+  color: #fff;
+}
 #tListWra .main-show .topic-list .detail-link {
+  display: inline-block;
+  width: 100vw;
+  padding: 12px 8px 4px;
   color: #333;
 }
 #tListWra .main-show .topic-list .detail-link .topic-show-item {
+  width: 100vw;
   margin-bottom: 4px;
 }
 #tListWra .main-show .topic-list .detail-link .topic-show-item .icon-show {
@@ -84,7 +107,7 @@
 }
 #tListWra .main-show .topic-list .detail-link .topic-show-item .titile {
   display: inline-block;
-  width: 92%;
+  width: 80%;
   line-height: 1.5;
   font-size: 18px;
   vertical-align: middle;
@@ -92,6 +115,7 @@
 #tListWra .main-show .topic-list .detail-link .topic-des {
   margin: 0 10px 4px 20px;
   line-height: 1.1;
+  min-height: 51px;
   font-size: 16px;
   color: #666;
 }
@@ -146,4 +170,33 @@
   background-repeat: no-repeat;
   background-size: 483px 28px;
   background-position: left;
+}
+#tListWra .fb-link {
+  position: fixed;
+  z-index: 9999;
+  bottom: 20px;
+  right: 20px;
+}
+#tListWra .fb-link .link-to-fb {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  background-image: linear-gradient(135deg, #64aff5, #4ca3f5);
+  box-shadow: 2px 2px 6px #adadad;
+}
+#tListWra .fb-link .link-to-fb img {
+  display: inline-block;
+  margin: 0 auto;
+  width: 34px;
+  height: 34px;
+  vertical-align: middle;
+}
+#tListWra .fb-link .link-to-fb .bg-btn {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
