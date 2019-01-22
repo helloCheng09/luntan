@@ -221,14 +221,19 @@
 }(window.Zepto, window.topic || (window.topic = {})))
 (function ($, root) {
     //  删除预览图片
+    console.log(201599999)
     function deletImg() {
         $(".img-input-item").each(function () {
             let ele = $(this)
+            let index = $(this).index()
+          
             $(this).find(".delet").on("click", function () {
                 ele.remove()
+                console.log(index)
                 console.log("删除图片")
                 // 超过4张不显示
                 root.showUpload()
+                ele.parent('#imgInput').find('input').eq(index)
             })
         })
     }

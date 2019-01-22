@@ -25,13 +25,21 @@ if ($("#fqWrap").length) {
     root.selectAllBtn($("#selAll"), "btn_selected")
     root.singleSel($(".student-item"), "selected")
 
-    console.log("11")
+    console.log(555)
     // 提交表单
-    $("#fabuSubmit").on("touchstart", function () {
-        $(".fabu-form").submit(function () {
-            $("#fabuSubmit").attr("type", "button")
-        })
+    var commitStatus = false
+    $("#fabuSubmit").on("click", function () {
+        if (!commitStatus) {
+            $(".fabu-form").submit(function () {
+                commitStatus = true
+            })
+        } else {
+            // 方重复
+            return false
+        }
     })
+
+    root.onceSubmit("#fabuSubmit", ".fabu-form")
 
 } else if ($("#tListWra").length) {
     /**
@@ -40,7 +48,7 @@ if ($("#fqWrap").length) {
     // 删除话题
     root.deletArticle()
     // let src = "../img/jielonglogo.png"
-    let src = "/public/yz/jl_img/jielonglogo.png"
+    let src = "/public/yz/jl_img/jielonglogo1.png"
     root.renderImg(src)
 
     console.log(root)
@@ -180,7 +188,7 @@ if ($("#fqWrap").length) {
             $("#submitBtn").attr("type", "button")
         })
     })
-    
+
     // var issubmit = false
     // function doSubmit() {
     //     if (issubmit == false) {
@@ -190,9 +198,9 @@ if ($("#fqWrap").length) {
     //         return false;
     //     }
     // }
-    
+
     // 删除评论
-    root.deletCom ()
+    root.deletCom()
 
 
 } else if (document.getElementById("comDetWrap")) {
@@ -208,6 +216,6 @@ if ($("#fqWrap").length) {
     root.maxComTop()
     // root.preImage(".comment-img-box", ".comment-img-box .show-img")
     // 删除评论
-    root.deletCom ()
+    root.deletCom()
 
 }

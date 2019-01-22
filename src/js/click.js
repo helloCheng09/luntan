@@ -1,11 +1,18 @@
 (function ($, root) {
     //  删除预览图片
+    console.log(201599999)
     function deletImg() {
-        $(".img-input-item").each(function () {
+        $("#imgInput li").each(function () {
             let ele = $(this)
-            $(this).find(".delet").on("click", function () {
-                ele.remove()
-                console.log("删除图片")
+            ele.find(".delet").off()
+            ele.find(".delet").on("click", function () {
+                // 被删除图片index
+                var thisIndex =$(this).parents('li').index()
+                $(this).parent('li').remove()
+                console.log(thisIndex)
+                console.log("删除图片111")
+                // 被删除图片的input
+                $('.img-input-box .input_bx input').eq(thisIndex).remove()
                 // 超过4张不显示
                 root.showUpload()
             })
@@ -307,7 +314,6 @@
         // 取对应的topic-id 发后台
         $(".delet-bar").unbind()
         $(".delet-bar").on("click", function (e) {
-
             let ele = $(this).parent(".topic-item").parent(".topic-item-b")
             layer.confirm('确定删除文章吗？', {
                 btn: ['确定', '取消'] //可以无限个按钮
@@ -321,11 +327,20 @@
                     layer.close(index);
                 }
             });
-
         })
     }
 
+    // 交表单 防重复
+    let onceSubmit = (btn, form) => {
+        console.log("教师提交提交")
+        let subBtn = btn
+        $(form).submit(function () {
+            $(subBtn).attr("disabled", "disabled");
+            console.log("教师提交提交")
+        })
+    }
 
+    root.onceSubmit = onceSubmit
     root.deletArticle = deletArticle
     root.deletCom = deletCom
     // root.doSubmit = doSubmit

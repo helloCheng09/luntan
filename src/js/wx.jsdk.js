@@ -114,7 +114,7 @@
   });
 
   function insertValue(value) {
-    $('#imgInput').prepend("<input type='hidden' name='img_value[]' value='" + value + "' >");
+    $('.img-input-box .input_bx').append("<input type='hidden' name='img_value[]' value='" + value + "' >");
   }
   //  插入小图
   let insertImg = (img_src) => {
