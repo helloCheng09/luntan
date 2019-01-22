@@ -60,6 +60,8 @@
 }
 #tListWra .main-show .topic-list .topic-item-b {
   overflow: hidden;
+  padding-bottom: 4px;
+  box-sizing: content-box;
   height: 144px;
   border-bottom: 1px solid #e0e0e0;
 }
