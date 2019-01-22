@@ -52,8 +52,8 @@
                     $(this).addClass("addlike")
                     $(this).next(".like-num").text(num)
                     // 发送后台点赞请求
-                    console.log("点赞")
-                    let url = 'http://www.mamawozaizhe.com/yz/mobile2/jielong/zanAjax'
+                    console.log("点赞11111")
+                    let url = 'http://www.mamawozaizhe.com/mobile2/jielong/zanAjax'
                     let likeArr = {
                         "comid": comId,
                         "act": "1"
@@ -63,6 +63,7 @@
             })
         })
     }
+
     // 最大话评论图片
     function comMaxImg() {
         $(".comment-img-box").on("click", function () {
@@ -163,7 +164,7 @@
                 let url = 'http://www.mamawozaizhe.com/mobile2/jielong/zanAjax'
                 let likeArr = {
                     "comid": topicId,
-                    "act": "1   "
+                    "act": "1"
                 }
                 root.sentLike(url, likeArr)
             }
