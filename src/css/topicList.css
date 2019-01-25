@@ -88,16 +88,16 @@
 }
 #tListWra .main-show .topic-list .delet-bar .delet-text,
 #tListWra .main-show .topic-list .delet-bar .re-send {
-  width: 80px;
+  width: 54px;
   line-height: 144px;
   font-size: 16px;
   text-align: center;
   height: 100%;
-  background-color: red;
+  background-color: #ff6a6a;
   color: #fff;
 }
 #tListWra .main-show .topic-list .delet-bar .re-send {
-  background-color: #30c230;
+  background-color: #4ca3f5;
 }
 #tListWra .main-show .topic-list .detail-link {
   display: inline-block;

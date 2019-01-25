@@ -64,10 +64,21 @@
   line-height: 1.3;
   word-break: break-all;
 }
+#tDetWrap .topic-det .topic-contain .title {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 1.2;
+  text-indent: 0;
+  word-break: break-all;
+  word-wrap: wrap;
+}
 #tDetWrap .topic-det .topic-contain p {
   font-size: 1.4rem;
   line-height: 1.5;
   word-break: break-all;
+  text-indent: 2em;
+  font-size: 16px;
 }
 #tDetWrap .topic-det .topic-contain img {
   display: inline-block;
