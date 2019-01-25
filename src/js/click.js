@@ -311,21 +311,20 @@
 
     }
 
-    // 删除文章
+    // 删除话题
     let deletArticle = () => {
-        // 取对应的topic-id 发后台
+        // 取对应的topic-id 发后台 
         $(".delet-text").unbind()
         $(".delet-text").on("click", function (e) {
-            let ele = $(this).parent(".topic-item").parent(".topic-item-b")
+            let ele = $(this).parents(".topic-item-b")
             layer.confirm('确定删除文章吗？', {
                 btn: ['确定', '取消'] //可以无限个按钮
                     ,
                 closeBtn: 1,
-                yes: function (index, layero) {
+                yes: function (index) {
                     console.log($(this))
                     let topicId = ele.attr("data-id")
-                    root.sendDelet(topicId)
-                    ele.remove()
+                    root.sendDelet(topicId, ele)
                     layer.close(index);
                 }
             });

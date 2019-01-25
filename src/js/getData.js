@@ -87,9 +87,9 @@
         console.log(status)
         alert("哎呀~网络出错了！")
     }
-    let sendTopic =(obj) =>{
+    let sendTopic = (obj) => {
         var url = obj.url
-        var data = obj.data 
+        var data = obj.data
         var type = obj.type
         console.log(obj)
         $.ajax({
@@ -98,15 +98,16 @@
             dataType: 'json',
             data: data,
             error: error,
-            success: function(res) {
+            success: function (res) {
                 success(res, type)
             }
         })
-    } 
+    }
     root.sendTopic = sendTopic
+
     function success(res, type) {
         // console.log(res)
-        if(type === 'reSend') {
+        if (type === 'reSend') {
             console.log(res)
             if (res.data.code === 1) {
                 // 请求成功
@@ -137,7 +138,7 @@
             },
             success: function () {
                 layer.msg('删除成功！');
-                var curNum = Number($("#comTag").text().split('：')[1]) - 1 
+                var curNum = Number($("#comTag").text().split('：')[1]) - 1
                 console.log(curNum)
                 var num = '评论：' + curNum
                 $("#comTag").text(num)
@@ -152,24 +153,38 @@
     }
 
     // 删除话题 发送后台
-    let sendDelet = (id) => {
+    let sendDelet = (id, ele) => {
         let url = "http://www.mamawozaizhe.com/mobile2/jielong/deleteAjax"
         console.log(url)
         console.log(id)
         $.ajax({
-            url: url,
+            url: url, 
             data: {
                 "tid": id
             },
-            type: "POST",
-            dataType: "JSON",
+            dataType: 'json',
+            type: "POST",  
             success: function (data) {
                 console.log(data)
-                layer.msg('删除成功！');
+                if (data.msg == 'success') {
+                    ele.remove()
+
+                    // 话题总数减少1
+                    var topicSum = Number($('.r-comment-sum').eq(0).text().split("：")[1]) - 1
+                    $('.r-comment-sum').eq(0).text('主题总数：' + topicSum)
+                    // 回复总数减少x
+                    var reNum =  Number($('.r-comment-sum').eq(1).text().split("：")[1]) - Number(ele.find('.com-num .com-text').text())
+                    $('.r-comment-sum').eq(1).text('回复总数：' + reNum)
+
+                    layer.msg('删除成功！');
+                } else {
+                    layer.msg('删除失败！');
+                }
+
             },
             error: function () {
                 layer.msg('删除失败！');
-               
+
             }
         })
     }
