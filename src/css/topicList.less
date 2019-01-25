@@ -10,6 +10,7 @@
         background-position: 50%;
         background-repeat: no-repeat;
         display: flex;
+        // background-color: #000;
     }
     .h-left {
         display: inline-block;
@@ -29,6 +30,13 @@
         display: inline-block;
         vertical-align: middle;
         margin-top: 28px;
+        .student-name{
+            .text {
+                line-height: 2.5;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
         .h-r-title {
             display: inline-block;
             vertical-align: middle;
@@ -53,7 +61,7 @@
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
         .topic-list {
-            margin-top: 10px;
+            // margin-top: 10px;
             font-size: 0;
             .topic-item-b {
                 overflow: hidden;
@@ -65,7 +73,7 @@
             .text-none {
                 padding: 10px 0;
                 font-size: 16px;
-                text-align:center;
+                text-align: center;
                 color: #808080;
                 border: none;
             }
@@ -77,7 +85,9 @@
             }
             .delet-bar {
                 line-height: 144px;
-                .delet-text {
+                display: flex;
+                .delet-text,
+                .re-send {
                     width: 80px;
                     line-height: 144px;
                     font-size: 16px;
@@ -85,6 +95,9 @@
                     height: 100%;
                     background-color: red;
                     color: #fff;
+                }
+                .re-send {
+                    background-color: #30c230;
                 }
             }
             .detail-link {
@@ -147,10 +160,31 @@
                 .t-time {}
                 .com-like-num {
                     display: flex;
-                    justify-content: flex-end;
-                    margin: 0 20px;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 0 10px;
                     font-size: 14px;
                     color: #adadad;
+                    .left {
+                        margin-top: 8px;
+                    }
+                    .right {
+                        display: flex;
+                        justify-content: flex-start;
+                    }
+                    .sent-status {
+                        color: #333;
+                    }
+                    .re-sent {
+                        display: inline-block;
+                        padding: 0 4px;
+                        border-radius: 4px;
+                        height: 20px;
+                        line-height: 20px;
+                        text-align: center;
+                        background-color: rgb(255, 80, 80);
+                        color: #fff;
+                    }
                 }
                 .com-like {
                     margin-right: 10px;

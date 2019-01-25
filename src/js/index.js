@@ -1,7 +1,9 @@
 let $ = window.Zepto
 let $scope = $(window.document)
 let root = window.topic
-
+root.url = {}
+root.url.reSendUrl = 'https://www.easy-mock.com/mock/5b9c69299c53ef2876d29227/list/resend'
+root.url.reSendUrl = 'http://www.mamawozaizhe.com/mobile2/jielong/re_send_msg'
 /***************************************************************************** */
 /**
  * 提交页面 入口
@@ -50,7 +52,8 @@ if ($("#fqWrap").length) {
     // let src = "../img/jielonglogo.png"
     let src = "/public/yz/jl_img/jielonglogo1.png"
     root.renderImg(src)
-
+    // 重新发送主题
+    root.reSend()
     console.log(root)
 } else if ($("#tDetWrap").length) {
     /**

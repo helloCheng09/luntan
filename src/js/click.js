@@ -1,13 +1,14 @@
 (function ($, root) {
     //  删除预览图片
     console.log(201599999)
+
     function deletImg() {
         $("#imgInput li").each(function () {
             let ele = $(this)
             ele.find(".delet").off()
             ele.find(".delet").on("click", function () {
                 // 被删除图片index
-                var thisIndex =$(this).parents('li').index()
+                var thisIndex = $(this).parents('li').index()
                 $(this).parent('li').remove()
                 console.log(thisIndex)
                 console.log("删除图片111")
@@ -273,11 +274,11 @@
                     yes: function (index, layero) {
                         //按钮【按钮一】的回调
                         let comId = ele.attr("data-id")
-                        // 页面删除
-                        ele.remove()
+                        // // 页面删除
+                        // ele.remove()
                         // 发送后台删除
                         let url = "http://www.mamawozaizhe.com/mobile2/jielong/deleteReply"
-                        root.sentAjaxDel(url, comId)
+                        root.sentAjaxDel(url, comId, ele)
                         layero.hide()
                         $("#layui-layer-shade1").hide()
                         // window.location.reload()
@@ -313,8 +314,8 @@
     // 删除文章
     let deletArticle = () => {
         // 取对应的topic-id 发后台
-        $(".delet-bar").unbind()
-        $(".delet-bar").on("click", function (e) {
+        $(".delet-text").unbind()
+        $(".delet-text").on("click", function (e) {
             let ele = $(this).parent(".topic-item").parent(".topic-item-b")
             layer.confirm('确定删除文章吗？', {
                 btn: ['确定', '取消'] //可以无限个按钮
@@ -340,6 +341,30 @@
             console.log("教师提交提交")
         })
     }
+
+    // 重新发送接龙
+    let reSend = () => {
+        $('.re_sent_topic').click(function () {
+            console.log(1234)
+            var tieid = $(this).parents('.topic-item-b').data('id')
+            var layOut = layer.confirm('是否重新发送主题？', function () {
+                root.sendTopic({
+                    url: root.url.reSendUrl,
+                    data: {
+                        tieid: tieid
+                    },
+                    type: 'reSend',
+                })
+                layer.close(layOut)
+            }, function () {
+                console.log(2222)
+                layer.close(layOut)
+                return false
+            });
+
+        })
+    }
+    root.reSend = reSend
 
     root.onceSubmit = onceSubmit
     root.deletArticle = deletArticle

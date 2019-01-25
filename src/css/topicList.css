@@ -31,6 +31,11 @@
   vertical-align: middle;
   margin-top: 28px;
 }
+#tListWra .h-right .student-name .text {
+  line-height: 2.5;
+  font-size: 16px;
+  color: #fff;
+}
 #tListWra .h-right .h-r-title {
   display: inline-block;
   vertical-align: middle;
@@ -55,7 +60,6 @@
   border-top-right-radius: 4px;
 }
 #tListWra .main-show .topic-list {
-  margin-top: 10px;
   font-size: 0;
 }
 #tListWra .main-show .topic-list .topic-item-b {
@@ -80,8 +84,10 @@
 }
 #tListWra .main-show .topic-list .delet-bar {
   line-height: 144px;
+  display: flex;
 }
-#tListWra .main-show .topic-list .delet-bar .delet-text {
+#tListWra .main-show .topic-list .delet-bar .delet-text,
+#tListWra .main-show .topic-list .delet-bar .re-send {
   width: 80px;
   line-height: 144px;
   font-size: 16px;
@@ -89,6 +95,9 @@
   height: 100%;
   background-color: red;
   color: #fff;
+}
+#tListWra .main-show .topic-list .delet-bar .re-send {
+  background-color: #30c230;
 }
 #tListWra .main-show .topic-list .detail-link {
   display: inline-block;
@@ -149,10 +158,31 @@
 }
 #tListWra .main-show .topic-list .detail-link .com-like-num {
   display: flex;
-  justify-content: flex-end;
-  margin: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
   font-size: 14px;
   color: #adadad;
+}
+#tListWra .main-show .topic-list .detail-link .com-like-num .left {
+  margin-top: 8px;
+}
+#tListWra .main-show .topic-list .detail-link .com-like-num .right {
+  display: flex;
+  justify-content: flex-start;
+}
+#tListWra .main-show .topic-list .detail-link .com-like-num .sent-status {
+  color: #333;
+}
+#tListWra .main-show .topic-list .detail-link .com-like-num .re-sent {
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 4px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #ff5050;
+  color: #fff;
 }
 #tListWra .main-show .topic-list .detail-link .com-like {
   margin-right: 10px;

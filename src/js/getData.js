@@ -87,13 +87,45 @@
         console.log(status)
         alert("哎呀~网络出错了！")
     }
-
-    function success(data, status) {
-        console.log(data)
-        console.log(status)
+    let sendTopic =(obj) =>{
+        var url = obj.url
+        var data = obj.data 
+        var type = obj.type
+        console.log(obj)
+        $.ajax({
+            url: url,
+            type: 'POST',
+            dataType: 'json',
+            data: data,
+            error: error,
+            success: function(res) {
+                success(res, type)
+            }
+        })
+    } 
+    root.sendTopic = sendTopic
+    function success(res, type) {
+        // console.log(res)
+        if(type === 'reSend') {
+            console.log(res)
+            if (res.data.code === 1) {
+                // 请求成功
+                // 无报错
+                layer.msg(res.data.msg);
+            } else {
+                // 请求成功
+                // 报错
+                layer.confirm('发送失败~' + res.data.msg, {
+                    btn: ['确定'],
+                    cancel: function () {
+                        return false;
+                    }
+                });
+            }
+        }
     }
 
-    let sentAjaxDel = (url, comId) => {
+    let sentAjaxDel = (url, comId, ele) => {
         $.ajax({
             url: url,
             type: 'POST',
@@ -105,6 +137,12 @@
             },
             success: function () {
                 layer.msg('删除成功！');
+                var curNum = Number($("#comTag").text().split('：')[1]) - 1 
+                console.log(curNum)
+                var num = '评论：' + curNum
+                $("#comTag").text(num)
+                // 页面删除
+                ele.remove()
             },
             error: function () {
                 layer.msg('删除失败！');
@@ -131,6 +169,7 @@
             },
             error: function () {
                 layer.msg('删除失败！');
+               
             }
         })
     }

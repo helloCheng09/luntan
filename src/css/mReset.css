@@ -86,7 +86,14 @@ table {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
-
+.six-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
 
 
 /* 伪元素 解决移动端1px线问题 */
